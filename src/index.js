@@ -1,5 +1,5 @@
 // export * from './components'
-// export * from './install'
+//export * from './install'
 
 import ComponentA from "./components/ComponentA.vue";
 import ComponentB from "./components/ComponentB.vue";

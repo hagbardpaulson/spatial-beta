@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 .component-b {
-  background-color: lightgrey;
+  background-color: red;
   padding: 10px;
   border-radius: 3px;
   button {
