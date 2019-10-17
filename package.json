@@ -1,7 +1,7 @@
 {
-  "name": "nodetest3",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@hagbardpaulson/nodetest3",
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "build": "vue-cli-service build --target lib --name nodetest3 ./src/index.js",
     "lint": "vue-cli-service lint",
@@ -27,5 +27,20 @@
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.1.0"
-  }
+  },
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b84831-789e-4629-a9e3-55a36e136653/deploy-status)](https://app.netlify.com/sites/sharp-babbage-154f0a/deploys)",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hagbardpaulson/nodetest3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hagbardpaulson/nodetest3/issues"
+  },
+  "homepage": "https://github.com/hagbardpaulson/nodetest3#readme"
 }
