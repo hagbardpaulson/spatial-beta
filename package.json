@@ -1,6 +1,6 @@
 {
   "name": "@hagbardpaulson/nodetest3",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "scripts": {
     "build": "vue-cli-service build --target lib --name nodetest3 ./src/index.js",
@@ -14,6 +14,7 @@
   "files": [
     "dist/*.{js,css}"
   ],
+  "main": "dist/nodetest3.umd.js",
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
