@@ -23,6 +23,14 @@ Vue.config.productionTip = false;
 //     components: { App },
 //     template: "<App/>",
 // });
+
+router.beforeEach((to, from, next) => {
+    let { title } = to.meta;
+    if (!title) { title = "Spatial"; } else { title = `Spatial - ${title}`; }
+    document.title = title;
+    next();
+});
+
 new Vue({
     router,
     render: h => h(App),

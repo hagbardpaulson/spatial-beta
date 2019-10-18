@@ -1,6 +1,6 @@
 {
-  "name": "@hagbardpaulson/nodetest3",
-  "version": "0.1.3",
+  "name": "@hagbardpaulson/spatial-beta",
+  "version": "0.1.0",
   "private": false,
   "scripts": {
     "build": "vue-cli-service build --target lib --name nodetest3 ./src/index.js",

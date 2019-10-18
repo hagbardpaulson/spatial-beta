@@ -13,16 +13,19 @@ const routes = [
         path: "/",
         name: "welcome",
         component: PageWelcome,
+        meta: { title: "Welcome" },
     },
     {
         path: "/components/component-a",
         name: "component-a",
         component: PageComponentA,
+        meta: { title: "ComponentA" },
     },
     {
         path: "/components/component-b",
         name: "component-b",
         component: PageComponentB,
+        meta: { title: "ComponentB" },
     },
 ];
 

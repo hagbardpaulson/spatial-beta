@@ -1,4 +1,4 @@
-# Spatial Design Vue Components
+# Spatial Design Beta
 
 > Create your own component library with [Vue CLI 3](https://cli.vuejs.org/).
 

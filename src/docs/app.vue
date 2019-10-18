@@ -65,6 +65,7 @@
         min-width: 100%;
         min-height: 100%;
         display: flex;
+        background: rgb(252, 252, 252);
 
         #side_nav {
             border-right: 1px solid $colorLight1;
@@ -75,11 +76,12 @@
                 margin: 0 0 20px 0;
                 h1 {
                     font-size: 1rem;
-                    font-weight: 600;
+                    font-weight: 500;
                 }
                 p {
                     font-size: .8rem;
                     font-weight: 500;
+                    color: $colorLight2;
                 }
             }
             ul {
@@ -89,9 +91,9 @@
 
                 h3 {
                     font-size: 0.9rem;
-                    font-weight: 500;
-                    margin: 25px 0 10px;
-                    color: $colorDark1;
+                    font-weight: 400;
+                    margin: 25px 0 8px;
+                    color: $colorLight2;
                 }
 
                 li {
@@ -99,7 +101,6 @@
                     transition: .2s;
 
                     &.selected {
-                        background: red;
                         font-weight: 500;
                         padding-left: 5px;
                     }
