@@ -1,0 +1,28 @@
+// import font
+@import url(https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500&display=swap);
+// font variables
+$roboto-slab: 'Roboto Slab', serif;   
+$open-sans: 'Open Sans', sans-serif;
+
+html {
+    font-family: 'Roboto Mono', monospace !important;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+body {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    height: 300px !important;
+    overflow-y: scroll;
+}
+
+.a-overlay{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

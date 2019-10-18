@@ -16,7 +16,8 @@
   ],
   "main": "dist/nodetest3.umd.js",
   "dependencies": {
-    "vue-router": "^2.6.0"
+    "vue-router": "^2.6.0",
+    "webpack": "^4.41.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

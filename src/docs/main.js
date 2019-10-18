@@ -1,6 +1,6 @@
 import Vue from "vue";
 // import componentsBuild from "@hagbardpaulson/nodetest3";
-import App from "./app.vue";
+import App from "./App.vue";
 import router from "./router";
 import componentsLive from "..";
 // import componentsBuild from "../dist/nodetest3.common";
