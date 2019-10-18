@@ -3,6 +3,7 @@
 
 import components from "./components";
 import directives from "./directives";
+import "./assets/scss/spatial-all.scss";
 // Export components individually
 export { components };
 

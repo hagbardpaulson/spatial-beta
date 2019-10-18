@@ -1,6 +1,6 @@
 {
   "name": "@hagbardpaulson/spatial-beta",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "scripts": {
     "build": "vue-cli-service build --target lib --name spatial-beta ./src/index.js",
@@ -18,7 +18,7 @@
   "dependencies": {
     "vue-router": "^2.6.0",
     "webpack": "^4.41.2",
-    "@hagbardpaulson/spatial-beta": "0.1.5"
+    "@hagbardpaulson/spatial-beta": "0.1.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
