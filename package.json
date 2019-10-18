@@ -5,8 +5,8 @@
   "scripts": {
     "build": "vue-cli-service build --target lib --name nodetest3 ./src/index.js",
     "lint": "vue-cli-service lint",
-    "docs:serve": "vue-cli-service serve docs/main.js",
-    "docs:build": "vue-cli-service build --target app --dest dist/docs ./docs/main.js"
+    "docs:serve": "vue-cli-service serve src_docs/main.js",
+    "docs:build": "vue-cli-service build --target app --dest docs ./src_docs/main.js"
   },
   "peerDependencies": {
     "vue": "^2.6.10"
