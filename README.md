@@ -1,6 +1,8 @@
 # Spatial Design Beta
 
-> Create your own component library with [Vue CLI 3](https://cli.vuejs.org/).
+> Component library built with [Vue CLI 3](https://cli.vuejs.org/).
+
+> [Demo & Documentation](https://hagbardpaulson.github.io/spatial-beta/)
 
 Sooner or later, you will find that creating a component library is much better than having all components inside your app project. A component library force you remove app specific logic from your components, makes it possible to reuse them in other apps. 
 

@@ -33,7 +33,7 @@
     "vue-template-compiler": "^2.6.10",
     "@vue/eslint-config-airbnb": "4.0.1"
   },
-  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b84831-789e-4629-a9e3-55a36e136653/deploy-status)](https://app.netlify.com/sites/sharp-babbage-154f0a/deploys)",
+  "description": "Beta version for testing Spatial Design Components",
   "directories": {
     "doc": "docs"
   },
@@ -42,7 +42,7 @@
     "url": "git+https://github.com/hagbardpaulson/nodetest3.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/hagbardpaulson/nodetest3/issues"
   },
