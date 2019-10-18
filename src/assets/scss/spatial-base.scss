@@ -1,0 +1,16 @@
+@import "./helpers.scss";
+@import "./variables.scss";
+
+.sp-tooltip {
+    position: fixed;
+    padding: 2px;
+    z-index: 99;
+    background: rgba(40, 40, 40, 0.6);;
+    transform: translateX(-50%);
+    pointer-events: none;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: .8rem;
+    font-weight: 500;
+}

@@ -11,12 +11,20 @@
                     Welcome
                 </li>
                 <h3>components</h3>
-                <li v-for="componentPage in componentPages"
-                    :key="componentPage.title"
-                    v-bind:class="{ 'selected': $route.name== componentPage.route}"
+                <li v-for="route in componentRoutes"
+                    :key="route.name"
+                    v-bind:class="{ 'selected': $route.name== route.name}"
                 >
-                    <router-link :to="{name: componentPage.route}" class="a-overlay"/>
-                    {{componentPage.header}}
+                    <router-link :to="{name: route.name}" class="a-overlay"/>
+                    {{route.displayName}}
+                </li>
+                <h3>directives</h3>
+                <li v-for="route in directiveRoutes"
+                    :key="route.name"
+                    v-bind:class="{ 'selected': $route.name== route.name}"
+                >
+                    <router-link :to="{name: route.name}" class="a-overlay"/>
+                    {{route.displayName}}
                 </li>
             </ul>
         </div>
@@ -29,6 +37,8 @@
         name: "app",
         data() {
             return {
+                componentRoutes: [],
+                directiveRoutes: [],
                 componentPages: [
                     {
                         header: "Component A",
@@ -40,6 +50,20 @@
                     },
                 ],
             };
+        },
+        created() {
+            this.$router.options.routes.forEach((route) => {
+                const newRoute = {
+                    name: route.name,
+                    displayName: route.meta.displayName,
+                    componentName: route.meta.componentName,
+                };
+                if (route.meta.type === "component") {
+                    this.componentRoutes.push(newRoute);
+                } else if (route.meta.type === "directive") {
+                    this.directiveRoutes.push(newRoute);
+                }
+            });
         },
         methods: {
             packageVersion() {

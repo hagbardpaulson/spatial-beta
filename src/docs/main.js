@@ -2,15 +2,18 @@ import Vue from "vue";
 // import componentsBuild from "@hagbardpaulson/nodetest3";
 import App from "./App.vue";
 import router from "./router";
-import componentsLive from "..";
+import componentsLive from "../index";
+// import componentsBuild from "../../dist/spatial-beta.umd";
+import "../assets/scss/spatial-all.scss";
 // import componentsBuild from "../dist/nodetest3.common";
-
+import spatialBeta from "@hagbardpaulson/spatial-beta";
 
 if (process.env.NODE_ENV === "development") {
     Vue.use(componentsLive);
     console.log("we're in dev");
 } else {
     // Vue.use(componentsBuild);
+    Vue.use(spatialBeta);
     console.log("we're in prod");
 }
 

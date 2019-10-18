@@ -1,5 +1,28 @@
 @import "@/docs/assets/scss/variables.scss";
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap);
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("assets/fonts/open_sans/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("assets/fonts/open_sans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("assets/fonts/open_sans/OpenSans-SemiBold.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("assets/fonts/open_sans/OpenSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
 
 .page {
     > h1 {
@@ -36,6 +59,7 @@
     .example {
         font-family: "OpenSans", sans-serif !important;
         display: flex;
+        font-weight: 500;
         min-height: 500px;
         flex-direction: column;
         justify-content: center;

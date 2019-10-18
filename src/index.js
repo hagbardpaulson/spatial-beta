@@ -1,16 +1,25 @@
 // export * from './components'
-//export * from './install'
+// export * from './install'
 
-import ComponentA from "./components/ComponentA.vue";
-import ComponentB from "./components/ComponentB.vue";
-
+import components from "./components";
+import directives from "./directives";
 // Export components individually
-export { ComponentA, ComponentB };
+export { components };
 
+console.log(directives);
 // What should happen if the user installs the library as a plugin
 function install(Vue) {
-    Vue.component("component-a", ComponentA);
-    Vue.component("component-b", ComponentB);
+    Object.values(components).forEach((component) => {
+        Vue.component(component.name, component);
+        // Vue.use(component);
+    });
+
+    // Object.values(directives).forEach((directive) => {
+    //     console.log(directive);
+    //     // Vue.component(component.name, component);
+    //     // Vue.directive("sp-ripple", SpRipple);
+    //     // Vue.use(component);
+    // });
 }
 
 // Export the library as a plugin

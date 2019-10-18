@@ -1,6 +1,6 @@
 <template>
     <div class="page">
-        <h1>Component B</h1>
+        <h1>{{$route.meta.displayName}}</h1>
 
         <h2>usage</h2>
         <code>
@@ -9,25 +9,22 @@
 
         <h2>example</h2>
         <div class="example">
-            <component-b label="placeholder"/>
+            <sp-button v-sp-ripple class="sp-button-filled">Click me</sp-button>
+            <sp-button v-sp-ripple="'white'" class="sp-button-filled" style="margin-top: 10px">Click me</sp-button>
         </div>
-        <!-- <component-b/> -->
     </div>
 </template>
 
 <script>
     export default {
+        name: "page-spatial-ripple",
+        displayName: "Ripple",
         data() {
             return {
                 htmlExample: `
-                <component-b/>
+                <div v-sp-ripple v-sp-ripple="'white'"/>
                 `,
             };
         },
     };
 </script>
-
-
-<style lang="scss" scoped>
-
-</style>

@@ -19,6 +19,7 @@
 
 <script>
     export default {
+        name: "sp-input",
         props: {
             id: { type: Number, default: 2016 },
             value: { type: String, default: "" },
