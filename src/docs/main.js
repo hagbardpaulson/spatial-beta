@@ -1,12 +1,14 @@
 import Vue from "vue";
 // import componentsBuild from "@hagbardpaulson/nodetest3";
+import "@hagbardpaulson/spatial-beta/dist/spatial-beta.css";
+import spatialBeta from "@hagbardpaulson/spatial-beta";
 import App from "./App.vue";
 import router from "./router";
 import componentsLive from "../index";
 // import componentsBuild from "../../dist/spatial-beta.umd";
 import "../assets/scss/spatial-all.scss";
 // import componentsBuild from "../dist/nodetest3.common";
-import spatialBeta from "@hagbardpaulson/spatial-beta";
+
 
 if (process.env.NODE_ENV === "development") {
     Vue.use(componentsLive);
