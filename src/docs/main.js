@@ -1,7 +1,9 @@
+import spatialBeta from "@hagbardpaulson/spatial-beta";
+import "@hagbardpaulson/spatial-beta/dist/spatial-beta.css";
+
 import Vue from "vue";
 // import componentsBuild from "@hagbardpaulson/nodetest3";
-import "@hagbardpaulson/spatial-beta/dist/spatial-beta.css";
-import spatialBeta from "@hagbardpaulson/spatial-beta";
+
 import App from "./App.vue";
 import router from "./router";
 import componentsLive from "../index";
