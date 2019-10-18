@@ -4,10 +4,18 @@
             <li>
                 <router-link
                     :to="{
-                        name: 'Welcome',
+                        name: 'home',
                     }"
                     class="a-overlay"
-                >Welcome</router-link>
+                >Home</router-link>
+            </li>
+            <li>
+                <router-link
+                    :to="{
+                        name: 'about',
+                    }"
+                    class="a-overlay"
+                >Button</router-link>
             </li>
         </ul>
         <router-view></router-view>

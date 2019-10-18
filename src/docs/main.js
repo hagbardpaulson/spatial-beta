@@ -1,11 +1,13 @@
 import Vue from "vue";
+// import componentsBuild from "@hagbardpaulson/nodetest3";
 import App from "./app.vue";
 import router from "./router";
-import componentsLive from "../src";
-// import componentsBuild from "../dist/nodetest3.umd";
+import componentsLive from "..";
+// import componentsBuild from "../dist/nodetest3.common";
 
-Vue.use(componentsLive);
+
 if (process.env.NODE_ENV === "development") {
+    Vue.use(componentsLive);
     console.log("we're in dev");
 } else {
     // Vue.use(componentsBuild);

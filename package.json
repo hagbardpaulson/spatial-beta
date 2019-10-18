@@ -5,8 +5,8 @@
   "scripts": {
     "build": "vue-cli-service build --target lib --name nodetest3 ./src/index.js",
     "lint": "vue-cli-service lint",
-    "docs:serve": "vue-cli-service serve --mode development src_docs/main.js",
-    "docs:build": "vue-cli-service build --target app --dest docs --mode production ./src_docs/main.js"
+    "docs:serve": "vue-cli-service serve --mode development src/docs/main.js",
+    "docs:build": "vue-cli-service build --target app --dest docs --mode production ./src/docs/main.js"
   },
   "peerDependencies": {
     "vue": "^2.6.10"
@@ -45,5 +45,10 @@
   "bugs": {
     "url": "https://github.com/hagbardpaulson/nodetest3/issues"
   },
-  "homepage": "https://github.com/hagbardpaulson/nodetest3#readme"
+  "homepage": "https://github.com/hagbardpaulson/nodetest3#readme",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
 }
