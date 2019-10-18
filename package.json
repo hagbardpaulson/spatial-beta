@@ -1,6 +1,6 @@
 {
   "name": "@hagbardpaulson/spatial-beta",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "scripts": {
     "build": "vue-cli-service build --target lib --name spatial-beta ./src/index.js",
