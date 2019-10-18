@@ -1,9 +1,9 @@
 {
   "name": "@hagbardpaulson/spatial-beta",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "scripts": {
-    "build": "vue-cli-service build --target lib --name nodetest3 ./src/index.js",
+    "build": "vue-cli-service build --target lib --name spatial-beta ./src/index.js",
     "lint": "vue-cli-service lint",
     "docs:serve": "vue-cli-service serve --mode development src/docs/main.js",
     "docs:build": "vue-cli-service build --target app --dest docs --mode production ./src/docs/main.js"
@@ -14,7 +14,7 @@
   "files": [
     "dist/*.{js,css}"
   ],
-  "main": "dist/nodetest3.umd.js",
+  "main": "dist/spatial-beta.umd.js",
   "dependencies": {
     "vue-router": "^2.6.0",
     "webpack": "^4.41.2"
@@ -39,14 +39,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hagbardpaulson/nodetest3.git"
+    "url": "git+https://github.com/hagbardpaulson/spatial-beta.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hagbardpaulson/nodetest3/issues"
+    "url": "https://github.com/hagbardpaulson/spatial-beta/issues"
   },
-  "homepage": "https://github.com/hagbardpaulson/nodetest3#readme",
+  "homepage": "https://github.com/hagbardpaulson/spatial-beta#readme",
   "browserslist": [
     "> 1%",
     "last 2 versions",
