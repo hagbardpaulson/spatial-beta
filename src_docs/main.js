@@ -1,9 +1,17 @@
 import Vue from "vue";
 import App from "./app.vue";
 import router from "./router";
+import componentsLive from "../src";
+// import componentsBuild from "../dist/nodetest3.umd";
 
-import nodetest3 from "../src";
-Vue.use(nodetest3);
+Vue.use(componentsLive);
+if (process.env.NODE_ENV === "development") {
+    console.log("we're in dev");
+} else {
+    // Vue.use(componentsBuild);
+    console.log("we're in prod");
+}
+
 
 Vue.config.productionTip = false;
 

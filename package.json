@@ -5,8 +5,8 @@
   "scripts": {
     "build": "vue-cli-service build --target lib --name nodetest3 ./src/index.js",
     "lint": "vue-cli-service lint",
-    "docs:serve": "vue-cli-service serve src_docs/main.js",
-    "docs:build": "vue-cli-service build --target app --dest docs ./src_docs/main.js"
+    "docs:serve": "vue-cli-service serve --mode development src_docs/main.js",
+    "docs:build": "vue-cli-service build --target app --dest docs --mode production ./src_docs/main.js"
   },
   "peerDependencies": {
     "vue": "^2.6.10"
@@ -15,6 +15,9 @@
     "dist/*.{js,css}"
   ],
   "main": "dist/nodetest3.umd.js",
+  "dependencies": {
+    "vue-router": "^2.6.0"
+  },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
@@ -27,13 +30,12 @@
     "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10",
-    "vuepress": "^1.1.0"
+    "@vue/eslint-config-airbnb": "4.0.1"
   },
   "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/b1b84831-789e-4629-a9e3-55a36e136653/deploy-status)](https://app.netlify.com/sites/sharp-babbage-154f0a/deploys)",
   "directories": {
     "doc": "docs"
   },
-  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hagbardpaulson/nodetest3.git"

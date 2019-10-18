@@ -1,7 +1,7 @@
 <template>
     <div>
         spatial
-        <component-b/>
+        <!-- <component-b/> -->
     </div>
 </template>
 

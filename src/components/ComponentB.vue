@@ -1,32 +1,33 @@
 <template>
-  <div class="component-b">
-    <input type="text" v-model="value">
-    <button @click="onClick">Click me</button>
-  </div>
+    <div class="component-b">
+        <input type="text" v-model="value">
+        <button @click="onClick">Click me</button>
+    </div>
 </template>
 
 <script>
-export default {
-  data () {
-    return {
-      value: 'Hello'
-    }
-  },
-  methods: {
-    onClick () {
-      this.$emit('click', this.value)
-    }
-  }
-}
+    export default {
+        data() {
+            return {
+                value: "Hello",
+            };
+        },
+        methods: {
+            onClick() {
+                this.$emit("click", this.value);
+            },
+        },
+    };
 </script>
 
 <style lang="scss" scoped>
-.component-b {
-  background-color: red;
-  padding: 10px;
-  border-radius: 3px;
-  button {
-    font-weight: bold;
-  }
-}
+    .component-b {
+        background-color: red;
+        padding: 10px;
+        border-radius: 3px;
+
+        button {
+            font-weight: bold;
+        }
+    }
 </style>

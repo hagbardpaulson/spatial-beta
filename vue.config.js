@@ -10,3 +10,6 @@
 //       contentBase: path.join(__dirname, 'test_doc')
 //     }
 //   }
+module.exports = {
+    publicPath: "./",
+};
