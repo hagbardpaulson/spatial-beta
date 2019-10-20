@@ -23,7 +23,7 @@
     });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
     @import "../../base/variables.scss";
     @import "../../base/helpers.scss";
 
