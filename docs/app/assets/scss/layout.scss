@@ -1,0 +1,70 @@
+@import "./variables.scss";
+
+// @font-face {
+//     font-family: "OpenSans";
+//     src: url("assets/fonts/open_sans/OpenSans-Light.ttf") format("truetype");
+//     font-weight: 300;
+// }
+
+// @font-face {
+//     font-family: "OpenSans";
+//     src: url("assets/fonts/open_sans/OpenSans-Regular.ttf") format("truetype");
+//     font-weight: 400;
+// }
+
+// @font-face {
+//     font-family: "OpenSans";
+//     src: url("assets/fonts/open_sans/OpenSans-SemiBold.ttf") format("truetype");
+//     font-weight: 500;
+// }
+
+// @font-face {
+//     font-family: "OpenSans";
+//     src: url("assets/fonts/open_sans/OpenSans-Bold.ttf") format("truetype");
+//     font-weight: 700;
+// }
+
+.page {
+    > h1 {
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    > h2 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 10px 0 0 0;
+    }
+    code, .example {
+        border-radius: 4px;
+        padding: 1em 1.5em;
+    }
+
+    code {
+        background: $colorDark2;
+        border-radius: 4px;
+        color: white;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: 1em 1.5em;
+        display: block;
+        word-wrap: break-word;
+    }
+
+    .example {
+        font-family: "OpenSans", sans-serif !important;
+        display: flex;
+        font-weight: 500;
+        min-height: 500px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        border: 1px solid $colorLight1;
+    }
+}

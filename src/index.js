@@ -1,27 +1,14 @@
-// export * from './components'
-// export * from './install'
+import material from './material'
+import * as MdComponents from './components'
 
-import components from "./components";
-import directives from "./directives";
-import "./assets/scss/spatial-all.scss";
-// Export components individually
-export { components };
+let VueMaterial = Vue => {
+  material(Vue)
 
-console.log(directives);
-// What should happen if the user installs the library as a plugin
-function install(Vue) {
-    Object.values(components).forEach((component) => {
-        Vue.component(component.name, component);
-        // Vue.use(component);
-    });
-
-    // Object.values(directives).forEach((directive) => {
-    //     console.log(directive);
-    //     // Vue.component(component.name, component);
-    //     // Vue.directive("sp-ripple", SpRipple);
-    //     // Vue.use(component);
-    // });
+  Object.values(MdComponents).forEach((MdComponent) => {
+    Vue.use(MdComponent)
+  })
 }
 
-// Export the library as a plugin
-export default { install };
+VueMaterial.version = '__VERSION__'
+
+export default VueMaterial
