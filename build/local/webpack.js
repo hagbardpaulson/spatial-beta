@@ -3,11 +3,11 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import FriendlyErrorsPlugin from "friendly-errors-webpack-plugin";
 import { config, resolvePath } from "../config";
 
-const StylelintPlugin = require("stylelint-webpack-plugin");
-
 const cssLoaders = "vue-style-loader!css-loader";
 const scssLoaders = "vue-style-loader!css-loader!sass-loader?outputStyle=compressed";
 const babelLoader = "babel-loader?cacheDirectory=true";
+
+const path = require("path");
 
 export default {
     devtool: "cheap-module-eval-source-map",
@@ -58,7 +58,7 @@ export default {
                 loader: scssLoaders,
             },
             {
-                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                test: /\.(png|jpe?g|gif|ttf|svg)(\?.*)?$/,
                 loader: "url-loader",
                 query: {
                     limit: 10000,

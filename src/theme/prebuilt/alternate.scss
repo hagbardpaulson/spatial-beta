@@ -1,0 +1,8 @@
+@import "../engine";
+
+@include md-register-theme("alternate", (
+    primary: blue,
+    accent: red
+));
+
+@import "../all";

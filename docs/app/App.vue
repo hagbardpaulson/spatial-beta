@@ -74,13 +74,18 @@
 </script>
 
 <style lang="scss">
-    @import "./assets/scss/reset.scss";
-    @import "./assets/scss/site.scss";
-    @import "./assets/scss/layout.scss";
+    @import "docs/assets/scss/reset.scss";
+    @import "docs/assets/scss/site.scss";
+    @import "docs/assets/scss/layout.scss";
+
+    @import "./themes/default.scss";
+    // @import "./themes/demo.scss";
 </style>
 
 <style lang="scss" scoped>
-    @import "./assets/scss/variables.scss";
+    @import "docs/assets/scss/variables.scss";
+
+
 
     #app {
         -webkit-font-smoothing: antialiased;

@@ -1,0 +1,8 @@
+@import "~spatial/theme/engine";
+
+@include md-register-theme("default", (
+    primary: red,
+    accent: orange
+));
+
+@import "./docs-imports.scss";

@@ -1,5 +1,5 @@
 <template>
-    <button>
+    <button class="md-theme-default">
         <slot/>
     </button>
 </template>
@@ -9,17 +9,6 @@
 
     export default new MdComponent({
         name: "SpButton",
-        props: {
-            href: String,
-            type: {
-                type: String,
-                default: "button",
-            },
-            disabled: Boolean,
-        },
-        computed: {
-
-        },
     });
 </script>
 
@@ -28,8 +17,9 @@
     @import "../../base/helpers.scss";
 
     .sp-button-base {
+        text-transform: uppercase;
         margin: 0;
-        padding: 0;
+        padding: 8px 12px;
         display: inline-block;
         position: relative;
         overflow: hidden;
@@ -63,44 +53,30 @@
 
     .sp-button {
         @extend .sp-button-base;
-        padding: 6px 12px;
         border: none;
         text-decoration: none;
         border-radius: $borderRadius-1;
         transition: .2s ease-out;
     }
 
-    .sp-button-filled {
+    .sp-button-primary {
         @extend .sp-button-base;
-        padding: 6px 12px;
-        background: $colorAccent;
-        color: white;
+    }
 
-        &:hover {
-            background: darken($colorAccent, 5%);
-        }
-        &:active {
-            background: darken($colorAccent, 10%);
-        }
+    .sp-button-text {
+        @extend .sp-button-base;
     }
 
     .sp-button-outlined {
         @extend .sp-button-base;
 
-        border: 2px solid $colorAccent;
-        color: $colorAccent;
-
-        &:hover {
-            background: rgba(darken($colorAccent, 5%), 0.05);
-            border-color: darken($colorAccent, 5%);
-            color: darken($colorAccent, 5%);
-        }
-
-
-        &:active {
-            border-color: darken($colorAccent, 10%);
-            background: rgba($colorAccent, .2);
-            color: darken($colorAccent, 10%);
-        }
+        border: 2px solid;
     }
+
+    .sp-button-filled {
+        @extend .sp-button-base;
+        color: white;
+    }
+
+    
 </style>

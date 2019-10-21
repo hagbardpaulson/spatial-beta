@@ -1,7 +1,7 @@
-import material from "vue-material/material";
-import MdButton from "./MdButton.vue";
+import material from 'spatial/material'
+import MdButton from './MdButton'
 
-export default (Vue) => {
-    material(Vue);
-    Vue.component(MdButton.name, MdButton);
-};
+export default Vue => {
+  material(Vue)
+  Vue.component(MdButton.name, MdButton)
+}

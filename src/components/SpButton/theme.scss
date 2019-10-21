@@ -1,0 +1,42 @@
+.sp-button {
+    color: sp-theme(primary);
+}
+.sp-button-primary {
+    background: sp-theme(text-primary);
+    color: sp-theme(primary);
+    // &:hover {
+    //     background: sp-theme(accent);
+    // }
+    // &:active {
+    //     background: darken(sp-theme(primary), 10%);
+    // }
+}
+.sp-button-text {
+    color: sp-theme(primary);
+}
+.sp-button-outlined {
+    border-color: sp-theme(primary) !important;
+    color: sp-theme(primary);
+
+    &:hover {
+        background: rgba(darken(sp-theme(primary), 5%), 0.05);
+        border-color: darken(sp-theme(primary), 5%);
+        color: darken(sp-theme(primary), 5%);
+    }
+
+
+    &:active {
+        border-color: darken(sp-theme(primary), 10%);
+        background: rgba(sp-theme(primary), .2);
+        color: darken(sp-theme(primary), 10%);
+    }   
+}
+.sp-button-filled {
+    background-color: sp-theme(primary) !important;
+    &:hover {
+        background: darken(sp-theme(primary), 5%) !important;
+    }
+    &:active {
+        background: darken(sp-theme(primary), 10%) !important;
+    }
+}

@@ -1,110 +1,19 @@
+<template>
+    <button class="md-button md-accent md-theme-default">
+      <slot />
+    </button>
+</template>
+
 <script>
-    import MdComponent from "../../core/MdComponent";
-    import MdButtonContent from "./MdButtonContent.vue";
+  import MdComponent from 'core/MdComponent'
+  import MdButtonContent from './MdButtonContent'
 
-    export default new MdComponent({
-        name: "MdButton",
-        data() {
-            return {
-                rippleActive: false,
-            };
-        },
-        components: {
-            MdButtonContent,
-        },
-        mixins: [
-        ],
-        props: {
-            href: String,
-            type: {
-                type: String,
-                default: "button",
-            },
-            disabled: Boolean,
-        },
-        computed: {
-            isRouterLink() {
-
-            },
-        },
-        render(createElement) {
-            const buttonContent = createElement("md-button-content", {
-                attrs: {
-                    disabled: this.disabled,
-                },
-                props: {
-                },
-                on: {
-                    "update:mdRippleActive": active => this.rippleActive = active,
-                },
-            }, this.$slots.default);
-            const buttonAttrs = {
-                staticClass: "md-button",
-                class: [
-                    this.$mdActiveTheme,
-                    {
-                        "md-focused": this.mdHasFocus,
-                    },
-                ],
-                attrs: {
-                    ...this.attrs,
-                    href: this.href,
-                    disabled: this.disabled,
-                    type: !this.href && (this.type || "button"),
-                },
-                on: {
-                    ...this.$listeners,
-                    touchstart: (event) => {
-                        if (this.rippleWorks) {
-                            this.rippleActive = event;
-                        }
-
-                        this.$listeners.touchstart && this.$listeners.touchstart(event);
-                    },
-                    touchmove: (event) => {
-                        if (this.rippleWorks) {
-                            this.rippleActive = event;
-                        }
-
-                        this.$listeners.touchmove && this.$listeners.touchmove(event);
-                    },
-                    mousedown: (event) => {
-                        if (this.rippleWorks) {
-                            this.rippleActive = event;
-                        }
-
-                        this.$listeners.mousedown && this.$listeners.mousedown(event);
-                    },
-                },
-            };
-            let tag = "button";
-
-            if (this.href) {
-                tag = "a";
-            } else if (this.isRouterLink) {
-                this.$options.props = MdRouterLinkProps(this, this.$options.props);
-
-                tag = "router-link";
-                const exactActiveClass = this.$props.exactActiveClass;
-                const activeClass = `${this.$props.activeClass || this.$material.router.linkActiveClass} md-active`;
-                buttonAttrs.props = {
-                    ...this.$props,
-                    exactActiveClass,
-                    activeClass,
-                };
-                delete buttonAttrs.props.type;
-                delete buttonAttrs.attrs.type;
-                delete buttonAttrs.props.href;
-                delete buttonAttrs.attrs.href;
-            }
-
-            return createElement(tag, buttonAttrs, [buttonContent]);
-        },
-    });
+  export default new MdComponent({
+    name: 'MdButton',
+  })
 </script>
 
 <style lang="scss">
-
     $md-button-min-width: 88px;
     $md-button-height: 36px;
     $md-button-radius: 2px;
@@ -136,7 +45,6 @@
 
     .md-button {
         @extend .md-button-clean;
-
         min-width: $md-button-min-width;
         height: $md-button-height;
         margin: 6px 8px;
@@ -160,42 +68,42 @@
             &:hover,
             &:active,
             &.md-focused {
-                &::before {
+                &:before {
                     background-color: currentColor;
-                    opacity: 0.12;
+                    opacity: .12;
                 }
             }
 
             &.md-focused {
                 &.md-primary,
                 &.md-accent {
-                    &::before {
-                        opacity: 0.2;
+                    &:before {
+                        opacity: .2;
                     }
                 }
             }
 
             &:active {
-                &::before {
-                    opacity: 0.2;
+                &:before {
+                    opacity: .2;
                 }
             }
 
-            &.md-ripple-off:active::before {
-                opacity: 0.26;
+            &.md-ripple-off:active:before {
+                opacity: .26;
             }
         }
 
         &.md-plain.md-button.md-raised:not([disabled]) {
-            color: rgba(#000, 0.87);
+            color: rgba(#000, .87);
             background-color: #fff;
 
             .md-icon-font {
-                color: rgba(#000, 0.87);
+                color: rgba(#000, .87);
             }
 
             .md-icon-image {
-                fill: rgba(#000, 0.87);
+                fill: rgba(#000, .87);
             }
         }
 
@@ -204,7 +112,7 @@
             border: 0;
         }
 
-        &::before {
+        &:before {
             position: absolute;
             top: 0;
             right: 0;
@@ -222,8 +130,14 @@
         }
 
         &.md-raised:not([disabled]) {
-            &.md-ripple-off:active::before {
-                opacity: 0.2;
+
+
+            &:active {
+
+            }
+
+            &.md-ripple-off:active:before {
+                opacity: .2;
             }
         }
 
@@ -239,107 +153,4 @@
         }
     }
 
-    .md-button-spaced .md-ripple {
-        padding: 0 16px;
-    }
-
-    .md-icon-button,
-    .md-fab {
-        border-radius: 50%;
-        z-index: 10;
-
-        &::before {
-            border-radius: 50%;
-        }
-
-        .md-ripple {
-            border-radius: 50%;
-        }
-    }
-
-    .md-icon-button,
-    .md-fab.md-mini,
-    .md-fab.md-dense {
-        .md-ripple-wave {
-            top: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            left: 0 !important;
-        }
-    }
-
-    .md-icon-button {
-        width: $md-button-icon-size;
-        min-width: $md-button-icon-size;
-        height: $md-button-icon-size;
-        margin: 0 6px;
-
-        &.md-dense {
-            width: $md-button-dense-height;
-            min-width: $md-button-dense-height;
-            height: $md-button-dense-height;
-        }
-
-        .md-ripple-enter-active {
-            transition-duration: 1.2s;
-        }
-    }
-
-    .md-fab {
-        width: $md-button-fab-size;
-        height: $md-button-fab-size;
-        min-width: 0;
-        overflow: hidden;
-
-        &.md-mini,
-        &.md-dense {
-            width: $md-button-fab-size-mini;
-            height: $md-button-fab-size-mini;
-        }
-
-        &.md-fab-top-right,
-        &.md-fab-top-left {
-            position: absolute;
-            top: 24px;
-        }
-
-        &.md-fab-bottom-right,
-        &.md-fab-bottom-left {
-            position: absolute;
-            bottom: 24px;
-        }
-
-        &.md-fab-top-center,
-        &.md-fab-bottom-center {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        &.md-fab-top-center {
-            top: 24px;
-        }
-
-        &.md-fab-bottom-center {
-            bottom: 24px;
-        }
-
-        &.md-fab-top-right,
-        &.md-fab-bottom-right {
-            right: 24px;
-        }
-
-        &.md-fab-top-left,
-        &.md-fab-bottom-left {
-            left: 24px;
-        }
-
-        &.md-fixed {
-            position: fixed;
-        }
-
-        .md-ripple {
-            padding: 0;
-        }
-    }
- </style>
+</style>

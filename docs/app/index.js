@@ -1,6 +1,6 @@
 // /* Third Party */
 // import Vue from 'vue'
-// import VueMaterial from 'vue-material'
+// import VueMaterial from 'spatial'
 
 // /* App */
 // import App from './components/App'
@@ -23,7 +23,8 @@
 
 
 import Vue from "vue";
-import VueMaterial from "vue-material";
+import VueMaterial from "spatial";
+import './themes/default.scss'
 // import componentsBuild from "@hagbardpaulson/nodetest3";
 
 import App from "./App.vue";
