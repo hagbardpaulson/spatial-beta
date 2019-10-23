@@ -12,7 +12,7 @@
  * @group themes
  */
 
-$md-default-palette: (
+$sp-default-palette: (
     primary: blue,
     accent: red,
     theme: "light"
@@ -26,7 +26,7 @@ $md-default-palette: (
  * @type map
  * @group themes
  */
-$md-theme-palette: ();
+$sp-theme-palette: ();
 
 
 /**
@@ -36,7 +36,7 @@ $md-theme-palette: ();
  * @type map
  * @group themes
  */
-$md-themes: ();
+$sp-themes: ();
 
 
 /**
@@ -58,7 +58,7 @@ $md-current-theme: null;
  * @group themes
  */
 
-$md-theme-name: null;
+$sp-theme-name: null;
 
 
 /**

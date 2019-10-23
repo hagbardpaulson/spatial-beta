@@ -1,3 +1,5 @@
-$md-theme-name: 'all';
-@import "../components/MdButton/theme";
+$sp-theme-name: 'all';
 @import "../components/SpButton/theme";
+@import "../components/SpInput/theme";
+@import "../components/SpMobileMenu/theme";
+@import "../components/SpOverlay/theme";

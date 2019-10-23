@@ -1,7 +1,7 @@
 <template>
     <div>
         start
-        <md-button to="/components/button">Default</md-button>
+        <sp-button to="/components/button">Default</sp-button>
     </div>
 </template>
 

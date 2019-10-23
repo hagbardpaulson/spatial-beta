@@ -1,34 +1,33 @@
-const getOption = (options, key) => options ?
-  (options[key] === false ? false : true ) :
-  true
+const getOption = (options, key) => (options
+    ? (options[key] !== false)
+    : true);
 
 export default (fn, time, option) => {
-  const leading = getOption(option, 'leading')
-  const trailing = getOption(option, 'trailing')
-  let timeout = null
-  let duplicated = false
+    const leading = getOption(option, "leading");
+    const trailing = getOption(option, "trailing");
+    let timeout = null;
+    let duplicated = false;
 
-  return function () {
-    const functionCall = () => fn.apply(this, arguments)
+    return function () {
+        const functionCall = () => fn.apply(this, arguments);
 
-    if (timeout) {
-      duplicated = true
-      return false
-    } else if (leading) {
-      functionCall()
-    }
-
-    const setThrottling = () => {
-
-      timeout = setTimeout(() => {
-        timeout = null
-
-        if (duplicated && trailing) {
-          duplicated = false
-          functionCall()
-          setThrottling()
+        if (timeout) {
+            duplicated = true;
+            return false;
+        } if (leading) {
+            functionCall();
         }
-      }, time)
-    }
-  }
-}
+
+        const setThrottling = () => {
+            timeout = setTimeout(() => {
+                timeout = null;
+
+                if (duplicated && trailing) {
+                    duplicated = false;
+                    functionCall();
+                    setThrottling();
+                }
+            }, time);
+        };
+    };
+};

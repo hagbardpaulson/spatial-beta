@@ -5,7 +5,7 @@ import { pack } from "../config";
 import generateThemes from "./themes";
 
 const spinner = new Ora({
-    text: "Building lib",
+    text: "building",
     color: "blue",
     spinner: "simpleDots",
 });
@@ -40,7 +40,7 @@ webpack(entries, (error, stats) => {
     }
 
     spinner.color = "yellow";
-    spinner.text = "Generating themes";
+    spinner.text = "generating themes";
 
     generateThemes();
 
@@ -52,5 +52,5 @@ webpack(entries, (error, stats) => {
         chunkModules: false,
     })}\n\n`);
 
-    spinner.succeed("Vue Material generated with success! \\o/");
+    spinner.succeed("build complete");
 });

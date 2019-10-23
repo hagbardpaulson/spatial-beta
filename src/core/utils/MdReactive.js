@@ -1,9 +1,9 @@
-import Vue from 'vue'
+import Vue from "vue";
 
 export default function (data) {
-  const Instance = {}
+    const Instance = {};
 
-  Vue.util.defineReactive(Instance, 'reactive', data)
+    Vue.util.defineReactive(Instance, "reactive", data);
 
-  return Instance.reactive
+    return Instance.reactive;
 }

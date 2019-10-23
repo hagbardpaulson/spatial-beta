@@ -35,6 +35,7 @@ export const config = {
         base: resolvePath("src/base"),
         core: resolvePath("src/core"),
         components: resolvePath("src/components"),
+        directives: resolvePath("src/directives"),
         docs: resolvePath("docs"),
         store: resolvePath("docs/app/store"),
         template: resolvePath("docs/app/template"),

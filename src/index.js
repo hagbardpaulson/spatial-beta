@@ -1,14 +1,14 @@
-import material from './material'
-import * as MdComponents from './components'
+import material from "./material";
+import * as components from "./components";
 
-let VueMaterial = Vue => {
-  material(Vue)
+const Spatial = (Vue) => {
+    material(Vue);
 
-  Object.values(MdComponents).forEach((MdComponent) => {
-    Vue.use(MdComponent)
-  })
-}
+    Object.values(components).forEach((component) => {
+        Vue.use(component);
+    });
+};
 
-VueMaterial.version = '__VERSION__'
+Spatial.version = "__VERSION__";
 
-export default VueMaterial
+export default Spatial;

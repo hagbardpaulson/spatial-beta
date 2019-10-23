@@ -1,16 +1,29 @@
 <template>
-    <button class="md-button md-accent md-theme-default">
-      <slot />
-    </button>
+    <div class="sp-input-field nohighlight">
+        <!-- <input
+            :id="id"
+            :placeholder="placeholder"
+            class="nohighlight w-100 validate"
+            :class="{ 'valid' : !isEmptyOrSpaces(value) }"
+            type="text"
+            :value="value"
+            :maxlength="maxlength"
+            @input="updateValue($event.target.value)"
+        />
+        <div class="sp-input-field-outline-idle"></div>
+        <div class="sp-input-field-outline-active"></div>
+        <label class="active" :for="id">{{ label }}</label>
+        <span class="sp-input-field-validation"></span> -->
+        empty
+    </div>
 </template>
 
 <script>
-  import MdComponent from 'core/MdComponent'
-  import MdButtonContent from './MdButtonContent'
+    import SpComponent from "../../core/SpComponent";
 
-  export default new MdComponent({
-    name: 'MdButton',
-  })
+    export default new SpComponent({
+        name: "SpInput",
+    });
 </script>
 
 <style lang="scss">

@@ -16,17 +16,13 @@ import {
 } from "../config";
 import banner from "./banner";
 
-function toUpperCase(_, c) {
-    return c ? c.toUpperCase() : "";
-}
 
-function classify(str) {
-    return str.replace(/(?:^|[-_/])(\w)/g, toUpperCase);
-}
-
-function getDirectories(src) {
-    return readdirSync(src).filter(file => statSync(join(src, file)).isDirectory());
-}
+const moduleName = classify(pack.name);
+const componentsPath = "src/components";
+const directivesPath = "src/directives";
+const themePath = "src/theme";
+const basePath = "src/base";
+const componentList = getDirectories(resolvePath(componentsPath));
 
 function setComponentsConfig(entries, output) {
     entries = {
@@ -50,6 +46,11 @@ function setComponentsConfig(entries, output) {
 
 function getCopyPaths() {
     const copyPaths = [
+        {
+            context: resolvePath(directivesPath),
+            from: "**/*.js",
+            to: resolvePath("dist/directives"),
+        },
         {
             context: resolvePath(basePath),
             from: "**/theme.scss",
@@ -78,19 +79,6 @@ function getCopyPaths() {
     return copyPaths;
 }
 
-function getExtractedCSSName({ filename }) {
-    if (filename) {
-        return filename.replace("js", "css");
-    }
-
-    return "[name].css";
-}
-
-const moduleName = classify(pack.name);
-const componentsPath = "src/components";
-const themePath = "src/theme";
-const basePath = "src/base";
-const componentList = getDirectories(resolvePath(componentsPath));
 
 export default (entry) => {
     let entries = {
@@ -294,3 +282,28 @@ export default (entry) => {
 
     return webpackConfig;
 };
+
+
+// #region Helpers
+
+function toUpperCase(_, c) {
+    return c ? c.toUpperCase() : "";
+}
+
+function classify(str) {
+    return str.replace(/(?:^|[-_/])(\w)/g, toUpperCase);
+}
+
+function getDirectories(src) {
+    return readdirSync(src).filter(file => statSync(join(src, file)).isDirectory());
+}
+
+function getExtractedCSSName({ filename }) {
+    if (filename) {
+        return filename.replace("js", "css");
+    }
+
+    return "[name].css";
+}
+
+// #endregion Helpers

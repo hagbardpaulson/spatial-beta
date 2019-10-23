@@ -1,14 +1,20 @@
 <template>
-    <button class="md-theme-default">
+    <button class="sp-theme-default" @click="triggerClick">
         <slot/>
     </button>
 </template>
 
 <script>
-    import MdComponent from "../../core/MdComponent";
+    import SpComponent from "../../core/SpComponent";
 
-    export default new MdComponent({
+    export default new SpComponent({
         name: "SpButton",
+        methods: {
+            triggerClick(e) {
+                if (this.isLoading) { return; }
+                this.$emit("click", e);
+            },
+        },
     });
 </script>
 
@@ -78,5 +84,5 @@
         color: white;
     }
 
-    
+
 </style>

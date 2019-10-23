@@ -16,8 +16,8 @@
  * @param {map} $palette —  The new palette
  */
 
-@mixin md-override-palette ($palette) {
-    $md-default-palette: map-merge($md-default-palette, $palette) !global;
+@mixin sp-override-palette ($palette) {
+    $sp-default-palette: map-merge($sp-default-palette, $palette) !global;
 }
 
 
@@ -39,22 +39,22 @@
  * @param {map} $palette [$md-default-palette] —  The theme palette
  */
 
-@mixin md-register-theme ($name, $palette: $md-default-palette) {
-    $palette: map-merge($md-default-palette, $palette);
-    $theme: map-merge($md-themes, (
+@mixin sp-register-theme ($name, $palette: $sp-default-palette) {
+    $palette: map-merge($sp-default-palette, $palette);
+    $theme: map-merge($sp-themes, (
         #{$name}: $palette
     ));
 
     :root {
         @each $type, $value in $palette {
-            --md-theme-#{$name}-#{$type}: #{$value}
+            --sp-theme-#{$name}-#{$type}: #{$value}
         }
     }
 
-    $md-themes: $theme !global;
-    $md-theme-name: $name !global;
+    $sp-themes: $theme !global;
+    $sp-theme-name: $name !global;
 
-    @include md-base-theme;
+    @include sp-base-theme;
 }
 
 
@@ -84,13 +84,13 @@
  * }
  */
 
-@mixin md-theme-component () {
-    @each $theme, $palette in $md-themes {
-        $md-theme-palette: map-merge($md-theme-palette, $palette) !global;
-        $md-current-theme: $theme !global;
+@mixin sp-theme-component () {
+    @each $theme, $palette in $sp-themes {
+        $sp-theme-palette: map-merge($sp-theme-palette, $palette) !global;
+        $sp-current-theme: $theme !global;
 
-        @if( $theme == $md-theme-name or $md-theme-name == 'all' ) {
-            &.md-theme-#{$theme} {
+        @if( $theme == $sp-theme-name or $sp-theme-name == 'all' ) {
+            &.sp-theme-#{$theme} {
                 @content;
             }
         }

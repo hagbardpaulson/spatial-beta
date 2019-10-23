@@ -9,14 +9,10 @@
         <h2>example</h2>
         <div class="example">
             <sp-button class="sp-button">button</sp-button>
+            <sp-button class="sp-button-primary">button primary</sp-button>
             <sp-button class="sp-button-text">button text</sp-button>
             <sp-button class="sp-button-outlined">button outlined</sp-button>
             <sp-button class="sp-button-filled">button filled</sp-button>
-            <h1>__</h1>
-            <md-button to="/components/button">Default</md-button>
-            <md-button to="/components/button" class="md-primary">Primary</md-button>
-            <md-button to="/components/button" class="md-accent">Accent</md-button>
-            <md-button to="/components/button" disabled>Disabled</md-button>
         </div>
     </div>
 </template>
@@ -35,3 +31,11 @@
         },
     };
 </script>
+
+<style lang="scss" scoped>
+    .example {
+        button {
+            margin: 10px;
+        }
+    }
+</style>

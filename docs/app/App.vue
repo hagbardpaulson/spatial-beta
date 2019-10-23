@@ -74,7 +74,7 @@
 </script>
 
 <style lang="scss">
-    @import "docs/assets/scss/reset.scss";
+    @import "src/base/index.scss";
     @import "docs/assets/scss/site.scss";
     @import "docs/assets/scss/layout.scss";
 

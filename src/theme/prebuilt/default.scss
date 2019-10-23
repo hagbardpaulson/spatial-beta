@@ -1,6 +1,6 @@
 @import "../engine";
 
-@include md-register-theme("default", (
+@include sp-register-theme("default", (
     primary: green,
     accent: orange
 ));

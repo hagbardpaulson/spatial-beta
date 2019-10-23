@@ -1,8 +1,15 @@
 @import "~spatial/theme/engine";
 
-@include md-register-theme("default", (
-    primary: red,
-    accent: orange
+@include sp-register-theme("default", (
+    accent: #1A89FF,
+    error: #FF5252,
+    light0: #FAFAFA,
+    light1: #F2F2F2,
+    light2: #DCDCDC,
+    dark1: #707070,
+    dark2: #343434,
 ));
+
+
 
 @import "./docs-imports.scss";

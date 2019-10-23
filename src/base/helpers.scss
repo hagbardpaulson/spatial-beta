@@ -12,23 +12,19 @@
 
 
 @mixin nodrag() {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    user-drag: none;
+    @extend .nodrag;
 }
 .nodrag {
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+    user-drag: none;
 }
 
 
 @mixin nohighlight() {
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent;
+    @extend .nohighlight;
 }
 .nohighlight {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -36,6 +32,7 @@
 }
 
 
+/*#region Cursors */
 
 .cursor-default {
     cursor: default !important;
@@ -65,14 +62,11 @@
     cursor: help !important;
 }
 
+/*#endregion Cursors */
+
 .sp-scrolllock {
     overflow: hidden !important;
 }
-
-
-
-
-
 
 
 /*#region Padding */
