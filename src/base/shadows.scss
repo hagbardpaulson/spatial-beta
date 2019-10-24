@@ -1,18 +1,18 @@
-@mixin shadow($depth) {
-    @if $depth < 1 {
-        box-shadow: none;
-    }
-    @else if $depth > 5 {
-        @warn "Invalid $depth `#{$depth}` for mixin `card`.";
-    }
-    @else {
-        box-shadow: shadow($depth);
-        -webkit-box-shadow: shadow($depth);
-        -moz-box-shadow: shadow($depth);
-    }
-}
+// @mixin shadow($depth) {
+//     @if $depth < 1 {
+//         box-shadow: none;
+//     }
+//     @else if $depth > 5 {
+//         @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+//     }
+//     @else {
+//         box-shadow: shadow($depth);
+//         -webkit-box-shadow: shadow($depth);
+//         -moz-box-shadow: shadow($depth);
+//     }
+// }
 
-@mixin box_shadow ($level) {
+@mixin sp-z ($level) {
 
     @if $level == 0 {
         box-shadow: none !important;
@@ -38,12 +38,12 @@
 
 @for $sp-z from 0 to 6 {
     .sp-z-#{$sp-z} {
-        @include box_shadow($sp-z);
+        @include sp-z($sp-z);
     }
 }
 
 @for $sp-z-hover from 0 to 6 {
     .sp-z-hover-#{$sp-z-hover}:hover {
-        @include box_shadow($sp-z-hover);
+        @include sp-z($sp-z-hover);
     }
 }

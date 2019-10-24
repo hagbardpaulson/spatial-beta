@@ -65,12 +65,9 @@
         transition: .2s ease-out;
     }
 
-    .sp-button-primary {
-        @extend .sp-button-base;
-    }
-
     .sp-button-text {
         @extend .sp-button-base;
+        padding: 0;
     }
 
     .sp-button-outlined {

@@ -1,15 +1,13 @@
 .sp-button {
     color: sp-theme(accent);
-}
-.sp-button-primary {
-    background: sp-theme(accent);
-    color: sp-theme(accent);
-    // &:hover {
-    //     background: sp-theme(accent);
-    // }
-    // &:active {
-    //     background: darken(sp-theme(primary), 10%);
-    // }
+    &:hover {
+        background: rgba(darken(sp-theme(accent), 5%), 0.05);
+        color: darken(sp-theme(accent), 5%);
+    }
+    &:active {
+        background: rgba(sp-theme(accent), .2);
+        color: darken(sp-theme(accent), 10%);
+    }
 }
 .sp-button-text {
     color: sp-theme(accent);

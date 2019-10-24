@@ -78,13 +78,12 @@
     @import "docs/assets/scss/site.scss";
     @import "docs/assets/scss/layout.scss";
 
-    @import "./themes/default.scss";
-    // @import "./themes/demo.scss";
+    //@import "./themes/default.scss";
+    @import "./themes/demo.scss";
 </style>
 
 <style lang="scss" scoped>
     @import "docs/assets/scss/variables.scss";
-
 
 
     #app {

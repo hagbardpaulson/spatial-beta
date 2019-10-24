@@ -31,40 +31,23 @@ import VueRouter from "vue-router";
 // routes
 import PageWelcome from "./views/PageWelcome.vue";
 
-// components
-import PageButton from "./views/components/PageButton.vue";
-import PageInput from "./views/components/PageInput.vue";
-import PageMobileMenu from "./views/components/PageMobileMenu.vue";
-
-// directives
-import PageRipple from "./views/directives/PageRipple.vue";
-import PageTooltip from "./views/directives/PageTooltip.vue";
-
-
-const componentPages = {
-    PageButton,
-    PageInput,
-    PageMobileMenu,
-};
-
-const directivePages = {
-    PageRipple,
-    PageTooltip,
-};
+// pages
+import ComponentPages from "./views/components/index";
+import DirectivePages from "./views/directives";
 
 Vue.use(VueRouter);
 
 const routes = [
-    // {
-    //     path: "/",
-    //     name: "welcome",
-    //     component: PageWelcome,
-    //     meta: { title: "Welcome" },
-    // },
+    {
+        path: "/",
+        name: "welcome",
+        component: PageWelcome,
+        meta: { title: "Welcome" },
+    },
 ];
 
 // components
-Object.values(componentPages).forEach((page) => {
+Object.values(ComponentPages).forEach((page) => {
     routes.push({
         path: `/components/${page.name.replace("page-", "")}`,
         name: page.name,
@@ -77,7 +60,7 @@ Object.values(componentPages).forEach((page) => {
     });
 });
 // directives
-Object.values(directivePages).forEach((page) => {
+Object.values(DirectivePages).forEach((page) => {
     routes.push({
         path: `/directives/${page.name.replace("page-", "")}`,
         name: page.name,

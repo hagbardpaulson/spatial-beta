@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-unresolved
 import material from "spatial/material";
 import SpInput from "./SpInput.vue";
 

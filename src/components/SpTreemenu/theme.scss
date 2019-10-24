@@ -1,0 +1,16 @@
+.sp-treemenu {
+    color: sp-theme(accent);
+
+    .sp-treemenu-item-container {
+        &.selected > .sp-treemenu-item {
+            background: rgba(sp-theme(accent), .1);
+            color: sp-theme(accent);
+        }
+
+        .sp-treemenu-item {
+            &:hover {
+                color: sp-theme(accent);
+            }
+        }
+    }
+}

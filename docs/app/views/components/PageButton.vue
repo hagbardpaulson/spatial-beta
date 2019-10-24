@@ -9,7 +9,6 @@
         <h2>example</h2>
         <div class="example">
             <sp-button class="sp-button">button</sp-button>
-            <sp-button class="sp-button-primary">button primary</sp-button>
             <sp-button class="sp-button-text">button text</sp-button>
             <sp-button class="sp-button-outlined">button outlined</sp-button>
             <sp-button class="sp-button-filled">button filled</sp-button>
