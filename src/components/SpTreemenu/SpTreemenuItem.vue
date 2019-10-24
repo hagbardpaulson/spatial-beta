@@ -2,7 +2,7 @@
     <li class="sp-treemenu-item-container" :class="{expanded: expanded }">
         <div
 
-            class="sp-treemenu-item d-flex flex-auto align-v-center"
+            class="sp-treemenu-item"
             @click="select"
         >
             <slot/>
@@ -51,6 +51,9 @@
     @import "../../base/helpers.scss";
 
     .sp-treemenu-item {
+        display: flex;
+        flex: auto;
+        align-items: center;
         border-radius: 4px;
         height: auto;
         outline: 0;

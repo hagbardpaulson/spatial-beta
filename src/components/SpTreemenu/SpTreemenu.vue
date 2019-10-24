@@ -30,7 +30,6 @@
         flex-direction: column;
         grid-gap: 3px;
         font-size: 0.9rem;
-        @include sp-z(2);
 
         .sp-treemenu-item-container {
             position: relative;
