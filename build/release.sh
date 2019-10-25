@@ -31,17 +31,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo -e "\n${YELLOW}Generating build... ${NC}"
     npm run build
 
-    echo "\n${YELLOW}GIT ${BLUE}Adding files ... ${NC}"
+    echo -e "\n${YELLOW}GIT ${BLUE}Adding files ... ${NC}"
     git add .
 
-    echo "\n${YELLOW}GIT ${BLUE}Adding commit ... ${NC}"
+    echo -e "\n${YELLOW}GIT ${BLUE}Adding commit ... ${NC}"
     git commit -m "build: $VERSION"
 
-    echo "\n${YELLOW}Publishing a new release... ${NC}"
+    echo -e "\n${YELLOW}Publishing a new release... ${NC}"
     git push -u origin master
     npm publish
 
-    echo "\n${GREEN}GOT EM!${NC}"
+    echo -e "\n${GREEN}GOT EM!${NC}"
 
 fi
 #   echo "\n${YELLOW}Checking for errors... ${NC}"
