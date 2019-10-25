@@ -1,7 +1,7 @@
-@mixin noselect() {
-    @extend .noselect;
+@mixin sp-noselect() {
+    @extend .sp-noselect;
 }
-.noselect {
+.sp-noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
@@ -11,10 +11,10 @@
 }
 
 
-@mixin nodrag() {
-    @extend .nodrag;
+@mixin sp-nodrag() {
+    @extend .sp-nodrag;
 }
-.nodrag {
+.sp-nodrag {
     -webkit-user-drag: none;
     -khtml-user-drag: none;
     -moz-user-drag: none;
@@ -23,10 +23,10 @@
 }
 
 
-@mixin nohighlight() {
-    @extend .nohighlight;
+@mixin sp-nohighlight() {
+    @extend .sp-nohighlight;
 }
-.nohighlight {
+.sp-nohighlight {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
 }

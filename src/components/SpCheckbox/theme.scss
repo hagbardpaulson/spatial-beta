@@ -1,0 +1,10 @@
+.sp-input-field [type="checkbox"]:checked + label:after,
+.sp-input-field [type="checkbox"]:not(:checked) + label:after {
+    background: sp-theme(accent);
+}
+
+.sp-input-field [type="checkbox"]:checked + label:before,
+.sp-input-field [type="checkbox"]:hover + label:before {
+    border-color: sp-theme(accent) !important;
+    opacity: 0.8 !important;
+}

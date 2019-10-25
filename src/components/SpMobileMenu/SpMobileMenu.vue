@@ -1,6 +1,5 @@
 <template>
     <div class="sp-mobile-menu sp-z-3" v-bind:class="{ enabled: enabled }" v-on:click="test($event)">
-        {{enabled}}
         <slot></slot>
     </div>
 </template>

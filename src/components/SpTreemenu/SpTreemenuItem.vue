@@ -62,7 +62,7 @@
         transition: padding-left .2s;
         cursor: pointer;
         transition: .2s;
-        @include noselect();
+        @include sp-noselect();
 
         h4 {
             margin: 0 0 0 10px;

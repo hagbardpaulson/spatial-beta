@@ -68,7 +68,7 @@ Vue.directive("sp-tooltip", {
                     el.addEventListener("mouseleave", handlerLeave);
                     el.addEventListener("touchend", handlerLeave);
                 }
-            }, 200);
+            }, 400);
         };
 
 

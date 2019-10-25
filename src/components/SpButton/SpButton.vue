@@ -43,8 +43,8 @@
         border-radius: $borderRadius-1;
         transition: .2s;
         cursor: pointer;
-        @include noselect;
-        @include nodrag;
+        @include sp-noselect;
+        @include sp-nodrag;
 
         &.disabled {
             pointer-events: none;
