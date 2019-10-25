@@ -5,6 +5,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
+CYAN='\033[0;36m'
 NC='\033[0m'
 
 # init the process
@@ -25,23 +26,21 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     # echo -e "\n${YELLOW}Linting code... ${NC}"
     # npm run lint
 
-    echo -e "\n${YELLOW}Linting stylesheets... ${NC}"
+    echo -e "\n${CYAN}=== Linting stylesheets === ${NC}"
     npm run lint:css
 
-    echo -e "\n${YELLOW}Generating build... ${NC}"
+    echo -e "\n${CYAN}=== Generating build === ${NC}"
     npm run build
 
-    echo -e "\n${YELLOW}GIT ${BLUE}Adding files ... ${NC}"
+    echo -e "\n${CYAN}=== ${BLUE}(GIT) ${CYAN} Creating commit ... ${NC}"
     git add .
-
-    echo -e "\n${YELLOW}GIT ${BLUE}Adding commit ... ${NC}"
     git commit -m "build: $VERSION"
 
-    echo -e "\n${YELLOW}Publishing a new release... ${NC}"
+    echo -e "\n${CYAN}=== Publishing a new release === ${NC}"
     git push -u origin master
     npm publish
 
-    echo -e "\n${GREEN}GOT EM!${NC}"
+    echo -e "\n${CYAN}=== GOT EM! RELEASED v:$VERSION$ ===${NC}"
 
 fi
 #   echo "\n${YELLOW}Checking for errors... ${NC}"
