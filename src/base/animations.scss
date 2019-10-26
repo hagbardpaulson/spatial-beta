@@ -1,0 +1,79 @@
+
+@for $i from 1 to 10 {
+    .anim-delay-#{$i} {
+        animation-delay: $i * 0.1s !important;
+    }
+}
+
+@for $i from 1 to 10 {
+    .anim-duration-#{$i} {
+        animation-duration: $i * 0.1s !important;
+    }
+}
+
+.anim-fadeIn {
+    animation-name: anim_fadeIn;
+    animation-duration: 0.5s;
+    animation-delay: 0;
+    animation-fill-mode: backwards;
+}
+
+@keyframes anim_fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.anim-fadeSlideIn {
+    animation-name: anim_fadeSlideIn;
+    animation-duration: 0.5s;
+    animation-delay: 0;
+    animation-fill-mode: backwards;
+}
+
+
+
+
+@keyframes anim_fadeSlideIn {
+    from {
+        transform: scale(.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+
+.anim-shimmer {
+    animation-name: anim_shimmer;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    position: relative;
+}
+
+.background-masker {
+    background: #fff;
+    position: absolute;
+}
+
+@keyframes anim_shimmer {
+    0% {
+        background-position: -468px 0
+    }
+
+    100% {
+        background-position: 468px 0
+    }
+}

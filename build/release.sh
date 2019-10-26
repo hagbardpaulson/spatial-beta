@@ -40,7 +40,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     git push -u origin master
     npm publish
 
-    echo -e "\n${CYAN}=== GOT EM! RELEASED v:$VERSION$ === ${NC}"
+    echo -e "\n${CYAN}=== GOT EM! RELEASED v:$VERSION === ${NC}"
 
 fi
 #   echo "\n${YELLOW}Checking for errors... ${NC}"

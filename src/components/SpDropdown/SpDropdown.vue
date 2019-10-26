@@ -4,17 +4,15 @@
             <slot></slot>
         </div>
         <div ref="null" class="sp-dropdown-null" v-bind:style="nullStyle" v-bind:class="{ active: active }">
-            <transition name="fade">
-                <div
-                    v-show="active"
-                    ref="content"
-                    class="sp-dropdown-content"
-                    v-bind:class="{ active: active }"
-                    v-bind:style="contentStyle"
-                >
-                    <slot name="content"></slot>
-                </div>
-            </transition>
+            <div
+                v-show="active"
+                ref="content"
+                class="sp-dropdown-content anim-fadeIn anim-duration-1"
+                v-bind:class="{ active: active }"
+                v-bind:style="contentStyle"
+            >
+                <slot name="content"></slot>
+            </div>
         </div>
     </div>
 </template>
@@ -233,16 +231,5 @@
         //transform: scale(1);
         opacity: 1;
         display: block;
-    }
-</style>
-
-<style lang="scss" scoped>
-    .fade-enter-active, .fade-leave-active {
-        //transform: scale(1);
-        opacity: 1;
-    }
-    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-        //transform: scale(0.9);
-        opacity: 0;
     }
 </style>
