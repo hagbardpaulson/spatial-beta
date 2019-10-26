@@ -8,6 +8,7 @@ import SpRadio from "./SpRadio";
 import SpModal from "./SpModal";
 import SpIcon from "./SpIcon";
 import SpDropdown from "./SpDropdown";
+import SpLoading from "./SpLoading";
 
 export {
     SpButton,
@@ -20,4 +21,5 @@ export {
     SpModal,
     SpIcon,
     SpDropdown,
+    SpLoading,
 };

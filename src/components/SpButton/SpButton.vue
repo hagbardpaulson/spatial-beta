@@ -23,6 +23,7 @@
     @import "../../base/helpers.scss";
 
     .sp-button-base {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
         text-transform: uppercase;
         margin: 0;
         padding: 8px 12px;

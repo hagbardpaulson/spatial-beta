@@ -1,6 +1,7 @@
 /*#region Ripple*/
 
 .sp-ripple {
+    display:block;
     position: absolute;
     top: 0;
     left: 0;
@@ -22,6 +23,7 @@
     opacity: 0.3;
     animation: sp-ripple 0.4s ease-out;
     //animation: sp-ripple 1.8s forwards;
+    pointer-events: none;
 }
 
 @keyframes sp-ripple {

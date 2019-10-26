@@ -1,6 +1,6 @@
 <template>
     <div class="sp-dropdown">
-        <div ref="trigger" @click="toggle">
+        <div class="sp-dropdown-trigger" ref="trigger" @click="toggle">
             <slot></slot>
         </div>
         <div ref="null" class="sp-dropdown-null" v-bind:style="nullStyle" v-bind:class="{ active: active }">
@@ -199,6 +199,9 @@
     }
 
     .sp-dropdown-trigger {
+        > * {
+            //pointer-events: none;
+        }
     }
 
     .sp-dropdown-null {

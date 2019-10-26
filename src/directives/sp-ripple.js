@@ -19,7 +19,7 @@ Vue.directive("sp-ripple", {
         const handlerUp = () => {
             fade(el.vueRipple);
             document.removeEventListener("mouseup", el.vueRippleHandler);
-            document.removeEventListener("touchend", el.vueRippleHandler);
+            // document.removeEventListener("touchend", el.vueRippleHandler);
             el.vueRippleHandler = null;
         };
         const handlerDown = (event) => {
@@ -76,18 +76,18 @@ Vue.directive("sp-ripple", {
             el.vueRippleHandler = handlerUp;
             el.vueRipple = ripple;
             document.addEventListener("mouseup", handlerUp);
-            document.addEventListener("touchend", handlerUp);
+            // document.addEventListener("touchend", handlerUp);
             return false;
         };
 
 
         el.addEventListener("mousedown", handlerDown);
-        el.addEventListener("touchstart", handlerDown);
+        // el.addEventListener("touchstart", handlerDown);
     },
 
     unbind(el) {
         document.removeEventListener("mouseup", el.vueRipple);
-        document.removeEventListener("touchend", el.vueRipple);
+        // document.removeEventListener("touchend", el.vueRipple);
         el.vueRipple = null;
     },
     stopProp(event) { event.stopPropagation(); },

@@ -73,12 +73,12 @@ Vue.directive("sp-tooltip", {
 
 
         el.addEventListener("mouseenter", handlerEnter);
-        el.addEventListener("touchstart", handlerEnter);
+        // el.addEventListener("touchstart", handlerEnter);
     },
 
     unbind(el) {
         document.removeEventListener("mouseleave", el.vueRipple);
-        document.removeEventListener("touchend", el.vueRipple);
+        // document.removeEventListener("touchend", el.vueRipple);
         el.tooltip = null;
     },
     stopProp(event) { event.stopPropagation(); },
