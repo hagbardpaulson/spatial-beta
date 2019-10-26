@@ -9,7 +9,9 @@
 
         <h2>example</h2>
         <div class="example">
-            <sp-input label="placeholder"/>
+            <sp-input-text style="margin: 20px" label="label" v-model="inputValue"/>
+            <sp-input-text style="margin: 20px" placeholder="placeholder" v-model="inputValue"/>
+            <sp-input-textarea style="margin: 20px" label="placeholder" placeholder="as" v-model="inputValue"/>
         </div>
         <!-- <component-b/> -->
     </div>
@@ -24,6 +26,7 @@
                 htmlExample: `
                 <sp-input/>
                 `,
+                inputValue: "hey",
             };
         },
     };

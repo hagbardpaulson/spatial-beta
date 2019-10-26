@@ -13,7 +13,6 @@
         name: "SpLoadingSlider",
         props: {
             value: {
-                type: Number,
                 default: () => 25,
             },
         },
