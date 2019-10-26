@@ -1,6 +1,12 @@
 $sp-theme-name: 'all';
 @import "../components/SpButton/theme";
+@import "../components/SpCheckbox/theme";
+@import "../components/SpDropdown/theme";
+//@import "../components/SpIcon/theme";
 @import "../components/SpInput/theme";
+@import "../components/SpLoading/theme";
 @import "../components/SpMobileMenu/theme";
+@import "../components/SpModal/theme";
 @import "../components/SpOverlay/theme";
+@import "../components/SpRadio/theme";
 @import "../components/SpTreemenu/theme";
