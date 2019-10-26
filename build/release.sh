@@ -32,11 +32,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo -e "\n${CYAN}=== Generating build === ${NC}"
     npm run build
 
-    echo -e "\n${CYAN}=== ${BLUE}(GIT) ${CYAN} Creating commit ... ${NC}"
+    echo -e "\n${CYAN}=== ${BLUE}(GIT) ${CYAN}Creating commit ... ${NC}"
     git add .
     git commit -m "build: $VERSION"
 
-    echo -e "\n${CYAN}=== Publishing a new release === ${NC}"
+    echo -e "\n${CYAN}=== Publishing === ${NC}"
     git push -u origin master
     npm publish
 

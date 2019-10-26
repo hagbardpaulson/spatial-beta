@@ -5,6 +5,9 @@ import SpOverlay from "./SpOverlay";
 import SpTreemenu from "./SpTreemenu";
 import SpCheckbox from "./SpCheckbox";
 import SpRadio from "./SpRadio";
+import SpModal from "./SpModal";
+import SpIcon from "./SpIcon";
+import SpDropdown from "./SpDropdown";
 
 export {
     SpButton,
@@ -14,4 +17,7 @@ export {
     SpTreemenu,
     SpCheckbox,
     SpRadio,
+    SpModal,
+    SpIcon,
+    SpDropdown,
 };
