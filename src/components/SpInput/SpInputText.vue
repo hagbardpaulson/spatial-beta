@@ -32,13 +32,11 @@
         watch: {
             value() {
                 this.buffer = this.value;
-                console.log("s");
             },
         },
         methods: {
             updateValue(value) {
                 this.$emit("input", value);
-                console.log(value);
                 this.isNull = this.isEmptyOrSpaces(value);
             },
             isEmptyOrSpaces(str) {
