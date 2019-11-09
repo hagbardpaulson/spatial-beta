@@ -1,7 +1,7 @@
 <template>
     <sp-input-field
         :id="id"
-        label="temp"
+        :label="label"
         class="sp-input-select"
         :class="[{active: active}]"
     >
