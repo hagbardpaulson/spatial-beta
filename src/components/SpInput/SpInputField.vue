@@ -1,5 +1,5 @@
 <template>
-    <div class="sp-input-field">
+    <div :id="id" class="sp-input-field">
         <slot/>
         <div class="sp-input-field-outline-idle"></div>
         <div class="sp-input-field-outline-active"></div>

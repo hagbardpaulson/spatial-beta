@@ -1,12 +1,12 @@
 <template>
     <sp-input-field
+        :id="id"
         label="temp"
         class="sp-input-select"
         :class="[{active: active}]"
     >
         <input id="testHidden" type="hidden" :value="value"/>
         <input
-            :id="id"
             :placeholder="placeholder"
             class="sp-input-select-text"
             :class="[{'valid':!isNull}, {'input-validation-error':!isValid}]"
