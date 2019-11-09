@@ -6,14 +6,25 @@
 .sp-input-field input[type=tel]:focus ~ .sp-input-field-outline-active,
 .sp-input-field input[type=email]:focus ~ .sp-input-field-outline-active,
 .sp-input-field input[type=password]:focus ~ .sp-input-field-outline-active,
+.sp-input-field textarea:focus ~ .sp-input-field-outline-active,
 .sp-input-field input[type=text].valid ~ .sp-input-field-outline-active,
 .sp-input-field input[type=tel].valid ~ .sp-input-field-outline-active,
 .sp-input-field input[type=email].valid ~ .sp-input-field-outline-active,
 .sp-input-field input[type=password].valid ~ .sp-input-field-outline-active,
+.sp-input-field textarea.valid ~ .sp-input-field-outline-active,
 .sp-input-field input[type=text]:focus ~ label,
 .sp-input-field input[type=tel]:focus ~ label,
 .sp-input-field input[type=email]:focus ~ label,
-.sp-input-field input[type=password]:focus ~ label {
+.sp-input-field input[type=password]:focus ~ label,
+.sp-input-field textarea:focus ~ label {
     color: sp-theme(accent);
     border-color: sp-theme(accent);
+}
+
+// select
+
+.sp-input-select-dropdown-item {
+    &:hover {
+        background: sp-theme(light1);
+    }
 }

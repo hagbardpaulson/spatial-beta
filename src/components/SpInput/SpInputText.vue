@@ -34,6 +34,9 @@
                 this.buffer = this.value;
             },
         },
+        mounted() {
+            this.isNull = this.isEmptyOrSpaces(this.value);
+        },
         methods: {
             updateValue(value) {
                 this.$emit("input", value);

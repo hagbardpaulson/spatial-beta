@@ -3,7 +3,7 @@
         <textarea
             :placeholder="placeholder"
             class="sp-input-textarea"
-            :class="{ 'input-validation-error' : !isValid }"
+            :class="[{'valid':!isNull}, {'input-validation-error':!isValid }]"
             type="text"
             v-model="buffer"
             @input="updateValue($event.target.value)"
@@ -32,6 +32,9 @@
             value() {
                 this.buffer = this.value;
             },
+        },
+        mounted() {
+            this.isNull = this.isEmptyOrSpaces(this.value);
         },
         methods: {
             updateValue(value) {

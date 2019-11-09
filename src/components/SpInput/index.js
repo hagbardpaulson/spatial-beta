@@ -3,10 +3,12 @@ import material from "spatial/material";
 import SpInputField from "./SpInputField.vue";
 import SpInputText from "./SpInputText.vue";
 import SpInputTextarea from "./SpInputTextarea.vue";
+import SpInputSelect from "./SpInputSelect.vue";
 
 export default (Vue) => {
     material(Vue);
     Vue.component(SpInputField.name, SpInputField);
     Vue.component(SpInputText.name, SpInputText);
     Vue.component(SpInputTextarea.name, SpInputTextarea);
+    Vue.component(SpInputSelect.name, SpInputSelect);
 };

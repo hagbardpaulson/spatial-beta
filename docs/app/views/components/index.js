@@ -6,6 +6,7 @@ import PageCheckbox from "./PageCheckbox.vue";
 import PageModal from "./PageModal.vue";
 import PageDropdown from "./PageDropdown.vue";
 import PageLoading from "./PageLoading.vue";
+import PageSelect from "./PageSelect.vue";
 
 export default {
     PageButton,
@@ -16,4 +17,5 @@ export default {
     PageModal,
     PageDropdown,
     PageLoading,
+    PageSelect,
 };
