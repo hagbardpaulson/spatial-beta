@@ -56,6 +56,7 @@
     .sp-input-field [type="radio"]:not(:checked) + label {
         position: relative;
         padding-left: 28px;
+        width: 100%;
         cursor: pointer;
         line-height: 18px;
         display: inline-block;
