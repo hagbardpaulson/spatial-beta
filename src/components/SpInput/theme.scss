@@ -30,8 +30,8 @@
 .sp-input-field textarea.invalid ~ span,
 .sp-input-field textarea.input-validation-error ~ span {
     opacity: 1;
-    color: sp-theme(error);
-    border-color: sp-theme(error);
+    color: sp-theme(error) !important;
+    border-color: sp-theme(error) !important;
 }
 
 .sp-input {
