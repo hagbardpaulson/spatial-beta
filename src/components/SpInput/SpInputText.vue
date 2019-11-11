@@ -71,7 +71,8 @@
 <style lang="scss">
 
     .sp-input-text-prefix{
-        margin: 0 -8px 0 12px;
+        margin: 0 -8px 0 0;
+        padding-left: 12px;
         display: flex;
         align-items: center;
         z-index: 1;
