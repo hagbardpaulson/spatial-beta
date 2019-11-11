@@ -21,6 +21,8 @@
         position: relative;
         height: auto;
         width: auto;
+        margin: 10px 0 0 0;
+        display: flex;
 
         /* Hide spinner for Firefox */
         input[type=number] {

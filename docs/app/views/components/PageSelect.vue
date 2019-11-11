@@ -8,15 +8,7 @@
 
         <h2>example</h2>
         <div class="example">
-            <p>selected: {{selectValue}}</p>
-            <sp-input-select
-                id="select_type"
-                label="Choose Type"
-                :items="items"
-                v-model="selectValue"
-            >
 
-            </sp-input-select>
 
             <select v-model="selectValue">
                 <option value="test">

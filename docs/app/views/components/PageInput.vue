@@ -9,10 +9,23 @@
 
         <h2>example</h2>
         <div class="example">
+            <p>selected: {{selectValue}}</p>
+            <sp-checkbox v-model="selectSearch" label="Can search" v-sp-ripple/>
+            <sp-input-select
+                id="select_type"
+                label="Choose Type"
+                :search="selectSearch"
+                :items="items"
+                v-model="selectValue"
+            >
+
+            </sp-input-select>
             <sp-input-text style="margin: 20px" label="label" v-model="inputValue"/>
-            <sp-input-text style="margin: 20px" placeholder="placeholder" v-model="inputValue"/>
+            <sp-input-text style="margin: 20px" label="label" placeholder="placeholder" v-model="inputValue"/>
+            <sp-input-text style="margin: 20px" label="Prefix" prefix="+46" v-model="inputValue"/>
             <sp-input-textarea style="margin: 20px" label="placeholder" placeholder="as" v-model="inputValue"/>
             <sp-input-textarea style="margin: 20px" label="placeholder" v-model="inputValue"/>
+
         </div>
         <!-- <component-b/> -->
     </div>
@@ -28,6 +41,22 @@
                 <sp-input/>
                 `,
                 inputValue: "",
+                selectSearch: true,
+                selectValue: "",
+                items: [
+                    {
+                        value: "1",
+                        header: "Sweden",
+                    },
+                    {
+                        value: "2",
+                        header: "Italy",
+                    },
+                    {
+                        value: "3",
+                        header: "Norway",
+                    },
+                ],
             };
         },
     };

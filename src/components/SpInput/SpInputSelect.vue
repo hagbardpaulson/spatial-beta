@@ -9,13 +9,19 @@
         <input
             :placeholder="placeholder"
             class="sp-input-select-text"
-            :class="[{'valid':!isNull}, {'input-validation-error':!isValid}]"
+            :class="[{'valid':!isNull},
+                     {'input-validation-error':!isValid},
+                     {'dissable-search':!search}]"
             type="text"
             :maxlength="maxlength"
             v-model="buffer"
             @input="updateValue($event.target.value)"
+            @blur="textBlur"
             @click="toggle"
         />
+        <p v-if="!search" class="sp-input-select-value" @click="toggle">
+            {{buffer}}
+        </p>
         <sp-icon-chevron-down/>
         <div class="sp-input-select-dropdown sp-z-2">
             <div class="sp-input-select-dropdown-item"
@@ -58,7 +64,7 @@
 
     export default new SpComponent({
         name: "SpInputSelect",
-        props: ["id", "value", "label", "items", "placeholder", "maxlength"],
+        props: ["id", "value", "label", "items", "placeholder", "maxlength", "search"],
         data() {
             return {
                 val: this.value,
@@ -102,6 +108,15 @@
                 // this.$emit("input", value);
                 this.isNull = this.isEmptyOrSpaces(value);
                 this.matchedItems = this.filterByValue(this.items, this.buffer);
+            },
+            textBlur() {
+                const matchedItems = this.filterByValue(this.items, this.buffer);
+                console.log(matchedItems.length);
+                // check matched items, if not null set first match
+                if (matchedItems.length) {
+                    console.log(matchedItems[0]);
+                    this.selectItem(matchedItems[0].value);
+                }
             },
             isEmptyOrSpaces(str) {
                 return !str || str === null || str.match(/^ *$/) !== null;
@@ -210,7 +225,8 @@
             will-change: transform;
         }
     }
-    .sp-input-select-text {
+    .sp-input-select-text,
+    .sp-input-select-value {
         font-size: 1rem !important;
         font-weight: 400;
         height: auto;
@@ -220,13 +236,28 @@
         border: none !important;
         padding: 0 12px !important;
         margin: 0 !important;
-        z-index: 2;
+        //z-index: 2;
+    }
+    .sp-input-select-text {
+        &.dissable-search {
+            visibility: hidden;
+        }
+    }
+    .sp-input-select-value {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
     }
 
     .sp-input-select-dropdown {
         display: none;
         flex-direction: column;
         position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
         min-height: 100px;
