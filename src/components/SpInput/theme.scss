@@ -1,3 +1,39 @@
+/* Label on Active and Valid */
+.sp-input-field input[type=text].invalid ~ .sp-input-field-outline-active,
+.sp-input-field input[type=text].input-validation-error ~ .sp-input-field-outline-active,
+.sp-input-field input[type=text].invalid ~ label,
+.sp-input-field input[type=text].input-validation-error ~ label,
+.sp-input-field input[type=text].invalid ~ span,
+.sp-input-field input[type=text].input-validation-error ~ span,
+.sp-input-field input[type=tel].invalid ~ .sp-input-field-outline-active,
+.sp-input-field input[type=tel].input-validation-error ~ .sp-input-field-outline-active,
+.sp-input-field input[type=tel].invalid ~ label,
+.sp-input-field input[type=tel].input-validation-error ~ label,
+.sp-input-field input[type=tel].invalid ~ span,
+.sp-input-field input[type=tel].input-validation-error ~ span,
+.sp-input-field input[type=email].invalid ~ .sp-input-field-outline-active,
+.sp-input-field input[type=email].input-validation-error ~ .sp-input-field-outline-active,
+.sp-input-field input[type=email].invalid ~ label,
+.sp-input-field input[type=email].input-validation-error ~ label,
+.sp-input-field input[type=email].invalid ~ span,
+.sp-input-field input[type=email].input-validation-error ~ span,
+.sp-input-field input[type=password].invalid ~ .sp-input-field-outline-active,
+.sp-input-field input[type=password].input-validation-error ~ .sp-input-field-outline-active,
+.sp-input-field input[type=password].invalid ~ label,
+.sp-input-field input[type=password].input-validation-error ~ label,
+.sp-input-field input[type=password].invalid ~ span,
+.sp-input-field input[type=password].input-validation-error ~ span,
+.sp-input-field textarea.invalid ~ .sp-input-field-outline-active,
+.sp-input-field textarea.input-validation-error ~ .sp-input-field-outline-active,
+.sp-input-field textarea.invalid ~ label,
+.sp-input-field textarea.input-validation-error ~ label,
+.sp-input-field textarea.invalid ~ span,
+.sp-input-field textarea.input-validation-error ~ span {
+    opacity: 1;
+    color: sp-theme(error);
+    border-color: sp-theme(error);
+}
+
 .sp-input {
 
 }
