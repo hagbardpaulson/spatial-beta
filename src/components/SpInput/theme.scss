@@ -2,6 +2,10 @@
 
 }
 
+.sp-input-required {
+    color: sp-theme(error);
+}
+
 .sp-input-field input[type=text]:focus ~ .sp-input-field-outline-active,
 .sp-input-field input[type=tel]:focus ~ .sp-input-field-outline-active,
 .sp-input-field input[type=email]:focus ~ .sp-input-field-outline-active,

@@ -263,7 +263,7 @@
         min-height: 100px;
         background: white;
         border-radius: 6px;
-        z-index: 1;
+        z-index: 4;
         margin: 5px 0 0 0;
         padding: 5px 0;
 

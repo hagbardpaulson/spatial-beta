@@ -1,8 +1,34 @@
 import Vue from "vue";
 
+function Timer(callback, delay) {
+    let timerId;
+
+    this.start = () => {
+        window.clearTimeout(timerId);
+        timerId = window.setTimeout(callback, delay);
+    };
+    this.stop = () => {
+        window.clearTimeout(timerId);
+    };
+    this.reset = () => {
+        window.clearTimeout(timerId);
+        timerId = window.setTimeout(callback, delay);
+    };
+
+    this.start();
+}
+
 Vue.directive("sp-tooltip", {
     isLiteral: true,
     bind(el, binding) {
+        let timer;
+
+        const handlerReset = () => {
+            if (!el.tooltip) {
+                timer.reset();
+            }
+        };
+
         function fade(element) {
             let op = window.getComputedStyle(element).getPropertyValue("opacity"); // initial opacity
             const timer = setInterval(() => {
@@ -18,18 +44,28 @@ Vue.directive("sp-tooltip", {
                 op -= 0.10;
             }, 20);
         }
+        function clear() {
+            if (el.tooltip) {
+                fade(el.tooltip);
+            }
+        }
 
         const handlerLeave = () => {
-            fade(el.tooltip);
+            if (el.tooltip) {
+                fade(el.tooltip);
+                el.tooltipHandler = null;
+                el.isMouseOver = false;
+            }
+
             document.removeEventListener("mouseleave", el.tooltipHandler);
             document.removeEventListener("touchend", el.tooltipHandler);
-            el.tooltipHandler = null;
-            el.isMouseOver = false;
+            timer.stop();
         };
         const handlerEnter = (event) => {
+            clear();
             event.preventDefault();
             el.isMouseOver = true;
-            setTimeout(() => {
+            timer = new Timer((() => {
                 if (el.isMouseOver) {
                     // set position to relative if not already set, for proper alignment
                     const targetStyle = window.getComputedStyle(el);
@@ -65,10 +101,11 @@ Vue.directive("sp-tooltip", {
 
                     el.tooltipHandler = handlerLeave;
                     el.tooltip = tooltip;
-                    el.addEventListener("mouseleave", handlerLeave);
-                    el.addEventListener("touchend", handlerLeave);
                 }
-            }, 400);
+            }), 1000);
+            el.addEventListener("mousemove", handlerReset);
+            el.addEventListener("mouseleave", handlerLeave);
+            el.addEventListener("touchend", handlerLeave);
         };
 
 

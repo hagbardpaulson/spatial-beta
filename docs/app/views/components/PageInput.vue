@@ -20,11 +20,12 @@
             >
 
             </sp-input-select>
-            <sp-input-text style="margin: 20px" label="label" v-model="inputValue"/>
-            <sp-input-text style="margin: 20px" label="label" placeholder="placeholder" v-model="inputValue"/>
-            <sp-input-text style="margin: 20px" label="Prefix" prefix="+46" v-model="inputValue"/>
-            <sp-input-textarea style="margin: 20px" label="placeholder" placeholder="as" v-model="inputValue"/>
-            <sp-input-textarea style="margin: 20px" label="placeholder" v-model="inputValue"/>
+            <sp-input-text label="label" v-model="inputValue"/>
+            <sp-input-text label="required" type="email" :validate="true" :required="true" maxlength="10" v-model="inputValue"/>
+            <sp-input-text label="label" placeholder="placeholder" v-model="inputValue"/>
+            <sp-input-text label="Prefix" prefix="+46" v-model="inputValue"/>
+            <sp-input-textarea label="placeholder" placeholder="as" v-model="inputValue"/>
+            <sp-input-textarea label="placeholder" v-model="inputValue"/>
 
         </div>
         <!-- <component-b/> -->

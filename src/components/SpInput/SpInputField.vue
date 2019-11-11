@@ -4,14 +4,14 @@
         <div class="sp-input-field-outline-idle"></div>
         <div class="sp-input-field-outline-active"></div>
         <label class="active" :for="id">{{ label }}</label>
-        <span class="sp-input-field-validation"></span>
+        <span class="sp-input-field-validation">{{validationMessage}}</span>
     </div>
 </template>
 
 <script>
     export default {
         name: "SpInputField",
-        props: ["id", "label"],
+        props: ["id", "label", "validationMessage"],
     };
 </script>
 
@@ -21,7 +21,7 @@
         position: relative;
         height: auto;
         width: auto;
-        margin: 10px 0 0 0;
+        margin: 20px 0 10px 0;
         display: flex;
 
         /* Hide spinner for Firefox */
@@ -36,6 +36,7 @@
             margin: 0;
         }
     }
+
 
     .sp-input-field input[type=text] ~ label,
     .sp-input-field input[type=tel] ~ label,
@@ -69,11 +70,12 @@
     }
 
     .sp-input-field > span {
+        font-weight: 400;
         transform-origin: right;
         transform: translateY(100%);
         position: absolute;
         top: auto;
-        right: 12px;
+        right: 0;
         bottom: 0;
         left: auto;
         width: auto;
@@ -92,6 +94,10 @@
         user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
     }
 
+    label {
+        z-index: 2;
+    }
+
     .sp-input-field-outline-idle,
     .sp-input-field-outline-active {
         pointer-events: none;
@@ -103,6 +109,7 @@
         height: 100%;
         will-change: opacity;
         transition: opacity .2s;
+        z-index: 1;
     }
 
     .sp-input-field-outline-active {
