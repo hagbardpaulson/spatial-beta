@@ -103,7 +103,7 @@
                 }
                 this.isValid = valid;
                 if (valid) {
-                    // this.validationMessageError = null;
+                    this.validationMessageError = null;
                 }
             },
             // validation

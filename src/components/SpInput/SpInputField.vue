@@ -21,7 +21,7 @@
         position: relative;
         height: auto;
         width: auto;
-        margin: 20px 0 10px 0;
+        margin: 10px 0 20px 0;
         display: flex;
 
         /* Hide spinner for Firefox */

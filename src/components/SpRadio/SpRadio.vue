@@ -16,6 +16,9 @@
                 this.$emit("input", this.data);
             },
         },
+        created() {
+            this.$emit("input", this.data);
+        },
     });
 </script>
 
