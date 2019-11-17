@@ -18,6 +18,9 @@
             @input="updateValue($event.target.value)"
             @blur="lostFocus($event.target.value)"
         />
+        <p class="sp-input-suffix" v-if="suffix"  @click="$refs.input.focus()">
+            {{suffix}}
+        </p>
         <p class="sp-input-required" v-if="required"  @click="$refs.input.focus()">
             *
         </p>
@@ -43,6 +46,10 @@
                 default: null,
             },
             prefix: {
+                type: String,
+                default: null,
+            },
+            suffix: {
                 type: String,
                 default: null,
             },
@@ -123,6 +130,16 @@
     .sp-input-prefix{
         margin: 0 -8px 0 0;
         padding-left: 12px;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+        font: inherit;
+        font-weight: 400;
+        opacity: .8;
+    }
+    .sp-input-suffix{
+        margin: 0 0 0 -8px;
+        padding-right: 12px;
         display: flex;
         align-items: center;
         z-index: 1;

@@ -1,7 +1,7 @@
 <template>
     <div class="sp-modal-page" :class="{visible: visible }" :ref="name">
         <div class="sp-modal-page-border-top sp-z-2" v-bind:style="{ opacity: borderTopOpacity }"></div>
-        <div class="sp-modal-page-content" :ref="`sp-modal-page-content-${name}`">
+        <div class="sp-modal-page-content" :ref="`sp-modal-page-content-${name}`" :class="{'sp-modal-page-content-scroll': scroll}">
             <slot/>
         </div>
         <div class="sp-modal-page-footer">
@@ -16,7 +16,7 @@
 <script>
     export default {
         name: "SpModalPage",
-        props: ["name"],
+        props: ["name", "scroll"],
         data() {
             return {
                 borderTopOpacity: 0,
@@ -80,6 +80,7 @@
 
         .sp-modal-page-border-top {
             opacity: 0;
+            z-index: 2;
             //border-top: 1px solid rgb(240, 240, 240);
         }
         .sp-modal-page-content {
@@ -89,6 +90,10 @@
             flex-direction: column;
             @include notch-padding-right;
             @include notch-padding-left;
+
+            &.sp-modal-page-content-scroll {
+                height: 50px;
+            }
         }
 
         .sp-modal-page-footer {

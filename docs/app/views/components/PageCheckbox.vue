@@ -9,8 +9,10 @@
         <h2>example</h2>
         <div class="example">
             <sp-checkbox v-model="checked" label="label 1" v-sp-ripple/>
-            <sp-radio id="radio1" binding="name1"  v-model="something" data="1" label="label 2"/>
-            <sp-radio id="radio2" binding="name1" data="2" v-model="something" label="label 3" v-sp-ripple/>
+            <sp-radio id="radio1" binding="something"  v-model="something" label="label 2"/>
+            <sp-radio id="radio2" binding="something" data="2" v-model="something" label="label 3" v-sp-ripple/>
+
+            <input type="radio" name="something" value="3" v-model="something"/>
             {{something}}
         </div>
     </div>
@@ -26,7 +28,7 @@
 
                 `,
                 checked: true,
-                something: "1",
+                something: "3",
                 color: null,
             };
         },

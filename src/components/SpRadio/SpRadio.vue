@@ -1,6 +1,6 @@
 <template>
     <div class="sp-input-field sp-input-field-radio mt-2 p-1 nohighlight">
-        <input :id="_uid" type="radio" :name="binding" :value="value" @input="onInput">
+        <input :key="_uid" :id="_uid" type="radio" :name="binding" :value="value" @input="onInput">
         <label :for="_uid">{{label}}</label>
     </div>
 </template>
