@@ -5,6 +5,7 @@
         </div>
         <div ref="null" class="sp-dropdown-null" v-bind:style="nullStyle" v-bind:class="{ active: active }">
             <div
+                :id="id"
                 v-show="active"
                 ref="content"
                 class="sp-dropdown-content anim-fadeIn anim-duration-1"
