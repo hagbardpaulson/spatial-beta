@@ -16,7 +16,9 @@
             :maxlength="maxlength"
             v-model="buffer"
             @input="updateValue($event.target.value)"
-            @blur="lostFocus($event.target.value)"
+            @blur="blur($event.target.value)"
+            @keydown="keyDown"
+            @keyup="keyUp"
         />
         <p class="sp-input-suffix" v-if="suffix"  @click="$refs.input.focus()">
             {{suffix}}
@@ -81,6 +83,26 @@
             this.isNull = this.isEmptyOrSpaces(this.value);
         },
         methods: {
+            keyDown(event) {
+                this.$emit("keydown", event);
+                if (event.keyCode === 13) {
+                    this.$emit("keydownenter", event);
+                }
+            },
+            keyUp(event) {
+                this.$emit("keyup", event);
+                if (event.keyCode === 13) {
+                    this.$emit("keyupenter", event);
+                }
+            },
+
+            blur(value) {
+                this.$emit("blur", value);
+                console.log(value);
+                if (this.validate) {
+                    this.validateValue(value);
+                }
+            },
             updateValue(value) {
                 this.$emit("input", value);
                 this.isNull = this.isEmptyOrSpaces(value);
@@ -88,13 +110,7 @@
                     this.validateValue(value);
                 }
             },
-            lostFocus(value) {
-                this.$emit("blur", value);
-                console.log(value);
-                if (this.validate) {
-                    this.validateValue(value);
-                }
-            },
+
             validateValue(value) {
                 let valid = true;
                 if (this.required) {
