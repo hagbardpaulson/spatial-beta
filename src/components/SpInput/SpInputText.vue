@@ -89,6 +89,7 @@
                 }
             },
             lostFocus(value) {
+                this.$emit("blur", value);
                 console.log(value);
                 if (this.validate) {
                     this.validateValue(value);
