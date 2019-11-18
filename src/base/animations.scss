@@ -17,7 +17,6 @@
     animation-delay: 0;
     animation-fill-mode: backwards;
 }
-
 @keyframes anim_fadeIn {
     from {
         opacity: 0;
@@ -33,10 +32,6 @@
     animation-delay: 0;
     animation-fill-mode: backwards;
 }
-
-
-
-
 @keyframes anim_fadeSlideIn {
     from {
         transform: scale(.9);
@@ -49,7 +44,9 @@
 }
 
 
-
+.sp-anim-timing-cubic {
+    transition-timing-function: cubic-bezier(0.24,1,0.32,1) !important;
+}
 
 .anim-shimmer {
     animation-name: anim_shimmer;

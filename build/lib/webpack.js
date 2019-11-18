@@ -62,6 +62,11 @@ function getCopyPaths() {
             to: resolvePath("dist/base"),
         },
         {
+            context: resolvePath(basePath),
+            from: "**/shadows.scss",
+            to: resolvePath("dist/base"),
+        },
+        {
             context: resolvePath(themePath),
             from: "**/*.scss",
             to: resolvePath("dist/theme"),
