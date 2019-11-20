@@ -24,6 +24,17 @@
         margin: 10px 0 20px 0;
         display: flex;
 
+        &.sp-no-border {
+            .sp-input-field-outline-idle,
+            .sp-input-field-outline-active {
+                display: none;
+            }
+        }
+
+        input {
+            background: transparent;
+        }
+
         /* Hide spinner for Firefox */
         input[type=number] {
             -moz-appearance: textfield;

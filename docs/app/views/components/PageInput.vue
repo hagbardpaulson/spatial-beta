@@ -25,7 +25,7 @@
             <sp-input-text label="Suffix" suffix="@mail.com" v-model="inputValue"/>
             <sp-input-textarea label="placeholder" placeholder="as" v-model="inputValue"/>
             <sp-input-textarea label="placeholder" v-model="inputValue"/>
-
+            <sp-input-text label="No border" class="sp-no-border" v-model="inputValue"/>
         </div>
         <!-- <component-b/> -->
     </div>
