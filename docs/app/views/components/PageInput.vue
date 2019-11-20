@@ -17,9 +17,7 @@
                 :search="selectSearch"
                 :items="items"
                 v-model="selectValue"
-            >
-
-            </sp-input-select>
+            />
             <sp-input-text label="label" v-model="inputValue" @keyupenter="htmlExample = 's'"/>
             <sp-input-text label="required" type="email" :validate="true" :required="true" maxlength="10" v-model="inputValue"/>
             <sp-input-text label="label" placeholder="placeholder" v-model="inputValue"/>
@@ -44,18 +42,18 @@
                 `,
                 inputValue: "",
                 selectSearch: true,
-                selectValue: "",
+                selectValue: 1,
                 items: [
                     {
-                        value: "1",
+                        value: 1,
                         header: "Sweden",
                     },
                     {
-                        value: "2",
+                        value: 2,
                         header: "Italy",
                     },
                     {
-                        value: "3",
+                        value: 3,
                         header: "Norway",
                     },
                 ],

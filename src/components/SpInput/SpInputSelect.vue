@@ -4,6 +4,7 @@
         :label="label"
         class="sp-input-select"
         :class="[{active: active}]"
+        @blur="blur"
     >
         <input id="testHidden" type="hidden" :value="value"/>
         <input
@@ -16,14 +17,14 @@
             :maxlength="maxlength"
             v-model="buffer"
             @input="updateValue($event.target.value)"
-            @blur="textBlur"
             @click="toggle"
+            ref="input"
         />
         <p v-if="!search" class="sp-input-select-value" @click="toggle">
             {{buffer}}
         </p>
         <sp-icon-chevron-down/>
-        <div class="sp-input-select-dropdown sp-z-2">
+        <div class="sp-input-select-dropdown sp-z-2" ref="dropdown">
             <div class="sp-input-select-dropdown-item"
                  v-for="(item, index) in matchedItems" :key="index"
                  @click="selectItem(item.value)"
@@ -49,7 +50,7 @@
             <i class="mdi mdi-chevron-down"></i>
             <div class="sp-select-dropdown sp-z-2 noselect">
                 <!-- <ul ref="test" v-show="isActive" id="list" class="sp-menu-items noselect" v-click-outside="close"> -->
-                <ul ref="test" v-show="isActive" id="list" class="sp-menu-items noselect">
+                <ul v-show="isActive" id="list" class="sp-menu-items noselect">
                     <!-- <slot v-for="item in items"
                           :item="item"/> -->
                     <slot/>
@@ -73,7 +74,7 @@
                 closeHandler: null,
 
                 selectedItem: null,
-                buffer: this.value,
+                buffer: "",
                 isNull: false,
                 isValid: true,
                 matchedItems: [],
@@ -88,6 +89,7 @@
         watch: {
             value() {
                 this.val = this.value;
+                // this.selectItem(this.value);
                 // this.buffer = this.value;
             },
             items() {
@@ -102,27 +104,33 @@
             this.$on("selected", this.updateValue);
             this.updateValue(this.buffer);
             this.matchedItems = this.items;
+            this.selectItem(this.value);
         },
         methods: {
             updateValue(value) {
                 // this.$emit("input", value);
                 this.isNull = this.isEmptyOrSpaces(value);
-                this.matchedItems = this.filterByValue(this.items, this.buffer);
+                this.matchItems(this.buffer);
             },
-            textBlur() {
-                const matchedItems = this.filterByValue(this.items, this.buffer);
-                console.log(matchedItems.length);
-                // check matched items, if not null set first match
-                if (matchedItems.length) {
-                    console.log(matchedItems[0]);
-                    this.selectItem(matchedItems[0].value);
-                }
+            matchItems(xx) {
+                this.matchedItems = this.filterByValue(this.items, xx);
+            },
+            blur() {
+                // const matchedItems = this.filterByValue(this.items, this.buffer);
+                // console.log(matchedItems.length);
+                // // check matched items, if not null set first match
+                // if (matchedItems.length) {
+                //     console.log(matchedItems[0]);
+                //     this.selectItem(matchedItems[0].value);
+                // }
             },
             isEmptyOrSpaces(str) {
                 return !str || str === null || str.match(/^ *$/) !== null;
             },
             toggle() {
-                console.log("toggle");
+                if (this.active) {
+                    return;
+                }
 
                 if (this.closeHandler) {
                     // remove Event Listeners
@@ -143,13 +151,14 @@
 
                 // Define Handler and cache it on the element
                 const handler = (he) => {
-                    if (!this.isChild(he.target, this.$refs.content)) {
-                        this.active = false;
-                        this.buffer = this.selectedItem.header;
-                        document.removeEventListener("click", this.closeHandler);
-                        document.removeEventListener("touchstart", this.closeHandler);
-                        this.closeHandler = null;
-                    }
+                    if (!this.isChild(he.target, this.$refs.input)
+                        && !this.isChild(he.target, this.$refs.dropdown)) {
+                            this.active = false;
+                            this.buffer = this.selectedItem.header;
+                            document.removeEventListener("click", this.closeHandler);
+                            document.removeEventListener("touchstart", this.closeHandler);
+                            this.closeHandler = null;
+                        }
                 };
                 this.closeHandler = handler;
 
@@ -158,41 +167,28 @@
                     document.addEventListener("click", handler);
                     document.addEventListener("touchstart", handler);
                 }, 0);
-                // if (this.activeSelectId() === this.id) {
-                //     this.setActiveSelectId(null);
-                // } else {
-                //     this.setActiveSelectId(this.id);
-                // }
             },
             isChild(obj, parentObj) {
-                while (obj != undefined && obj != null && obj.tagName.toUpperCase() != "BODY") {
-                    if (obj == parentObj) {
+                while (obj !== undefined && obj != null && obj.tagName.toUpperCase() !== "BODY") {
+                    if (obj === parentObj) {
                         return true;
                     }
                     obj = obj.parentNode;
                 }
                 return false;
             },
-            // updateValue(value, innerHTML) {
-            //     console.log("ss");
-            //     // this.value = value;
-            //     this.selectedHtml = innerHTML;
-            //     // this.$emit("input", value);
-            //     this.$emit("update:value", value);
-            // },
-            close() {
-                // if (this.activeSelectId() === this.id) {
-                //     this.setActiveSelectId(null);
-                // }
-            },
             filterByValue(array, string) {
-                return array.filter(o => Object.keys(o).some(k => o[k].toLowerCase().includes(string.toLowerCase())));
+                const newArray = array.filter(el => el.header.toLowerCase().includes(string.toLowerCase()));
+                return newArray;
             },
             selectItem(value) {
+                console.log(value);
                 const selectedItem = this.items.filter(obj => obj.value === value)[0];
                 this.buffer = selectedItem.header;
                 this.selectedItem = selectedItem;
                 this.$emit("input", selectedItem.value);
+                this.active = false;
+                this.matchItems("");
             },
         },
     });
@@ -251,6 +247,7 @@
         right: 0;
         bottom: 0;
         left: 0;
+        cursor: pointer;
     }
 
     .sp-input-select-dropdown {
