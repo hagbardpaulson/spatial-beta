@@ -26,6 +26,7 @@
             <sp-input-textarea label="placeholder" placeholder="as" v-model="inputValue"/>
             <sp-input-textarea label="placeholder" v-model="inputValue"/>
             <sp-input-text label="No border" class="sp-no-border" v-model="inputValue"/>
+            <sp-input-textarea label="Autoheight" v-model="inputValue" :autoheight="true"/>
         </div>
         <!-- <component-b/> -->
     </div>

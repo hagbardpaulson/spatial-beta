@@ -80,3 +80,7 @@ ul:not(.browser-default) {
 ul:not(.browser-default) > li {
     list-style-type: none;
 }
+
+*:focus {
+    outline: none;
+}
