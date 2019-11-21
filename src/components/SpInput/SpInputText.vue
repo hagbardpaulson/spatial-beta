@@ -183,7 +183,7 @@
         min-height: 40px;
         box-shadow: none !important;
         border: none !important;
-        padding: 0 12px !important;
+        padding: 0 12px;
         margin: 0 !important;
         //z-index: 2;
     }

@@ -24,10 +24,35 @@
         margin: 10px 0 20px 0;
         display: flex;
 
-        &.sp-no-border {
+        // Outline styles
+        &.sp-input-outline-none {
             .sp-input-field-outline-idle,
             .sp-input-field-outline-active {
                 display: none;
+            }
+            input {
+                padding: 0;
+            }
+            label {
+                left: 0 !important;
+                padding-left: 0 !important;
+            }
+        }
+        &.sp-input-outline-under {
+            .sp-input-field-outline-idle,
+            .sp-input-field-outline-active {
+                border-radius: 0;
+                border-top: 0;
+                border-right: 0;
+                border-left: 0;
+            }
+
+            input {
+                padding: 0;
+            }
+            label {
+                left: 0 !important;
+                padding-left: 0 !important;
             }
         }
 

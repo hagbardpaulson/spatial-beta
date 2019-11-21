@@ -25,7 +25,8 @@
             <sp-input-text label="Suffix" suffix="@mail.com" v-model="inputValue"/>
             <sp-input-textarea label="placeholder" placeholder="as" v-model="inputValue"/>
             <sp-input-textarea label="placeholder" v-model="inputValue"/>
-            <sp-input-text label="No border" class="sp-no-border" v-model="inputValue"/>
+            <sp-input-text label="Outline none" class="sp-input-outline-none" v-model="inputValue"/>
+            <sp-input-text label="Outline under" class="sp-input-outline-under" v-model="inputValue"/>
             <sp-input-textarea label="Autoheight" v-model="inputValue" :autoheight="true"/>
         </div>
         <!-- <component-b/> -->
