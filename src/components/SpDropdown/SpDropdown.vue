@@ -164,7 +164,9 @@
 
                 // Define Handler and cache it on the element
                 const handler = (he) => {
-                    if (!this.isChild(he.target, this.$refs.content)) {
+                    const isCloseTrigger = he.target.className.match(/\bsp-trigger-close\b/) != null;
+                    console.log(isCloseTrigger);
+                    if (isCloseTrigger || !this.isChild(he.target, this.$refs.content)) {
                         this.active = false;
                         document.removeEventListener("click", this.closeHandler);
                         document.removeEventListener("touchstart", this.closeHandler);
