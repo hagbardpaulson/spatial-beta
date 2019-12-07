@@ -73,7 +73,7 @@
         },
         data() {
             return {
-                hide: false,
+                hide: true,
                 pages: [],
                 pageIndex: 0,
             };
