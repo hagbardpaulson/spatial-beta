@@ -1,12 +1,12 @@
 <template>
     <div class="sp-modal-container">
         <div class="sp-modal"
-             v-bind:class="{ enabled: enabled }"
+             v-bind:class="[{ enabled: enabled }, {hide: hide}]"
              :style="`width:${this.width}; height:${this.height}`">
             <div class="sp-modal-header">
                 <slot name="header">
                     <h4>{{header}}</h4>
-                    <a class="modal-close" @click="hide">
+                    <a class="modal-close" @click="closeModal">
                         <sp-button v-sp-ripple class="sp-button-text modal-close">
                             <sp-icon-close/>
                         </sp-button>
@@ -61,13 +61,19 @@
                     this.$emit("opened");
                     this.pageIndex = 0;
                     this.error = false;
+                    this.hide = false;
                 } else if (!newVal) {
                     this.$emit("closed");
+                    setTimeout(() => {
+                        this.hide = true;
+                        console.log("hidden");
+                    }, 200);
                 }
             },
         },
         data() {
             return {
+                hide: false,
                 pages: [],
                 pageIndex: 0,
             };
@@ -80,7 +86,7 @@
             });
         },
         methods: {
-            hide() {
+            closeModal() {
                 this.$emit("hide");
             },
             stepToPrevious() {
@@ -138,6 +144,9 @@
                 transform: scale(1);
                 pointer-events: all;
                 opacity: 1;
+            }
+            &.hide {
+                display: none !important;
             }
 
             .sp-modal-header {

@@ -18,6 +18,10 @@
             >
                 <sp-modal-page name="page1" visible="true">
                     page 1
+                    fix click trough
+                    <sp-checkbox v-model="checked" label="label 1" v-sp-ripple/>
+                    <sp-radio id="radio1" binding="something"  v-model="something" label="label 2"/>
+                    <sp-radio id="radio2" binding="something" data="2" v-model="something" label="label 3" v-sp-ripple/>
                 </sp-modal-page>
 
                 <sp-modal-page name="page2" visible="true">
@@ -50,6 +54,11 @@
                 `,
                 modalEnabled: false,
                 modalError: false,
+
+                // temp
+                checked: true,
+                something: "3",
+                color: null,
             };
         },
     };
