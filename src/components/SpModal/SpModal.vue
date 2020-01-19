@@ -89,6 +89,9 @@
             closeModal() {
                 this.$emit("hide");
             },
+            stepToIndex(index) {
+                this.pageIndex = index;
+            },
             stepToPrevious() {
                 const nextIndex = this.pageIndex - 1;
                 if (nextIndex >= 0) {

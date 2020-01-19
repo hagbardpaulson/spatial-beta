@@ -1,17 +1,17 @@
-import MdTheme from "core/MdTheme";
+import SpTheme from "core/SpTheme";
 import deepmerge from "deepmerge";
 
 export default function (newComponent) {
     const defaults = {
         props: {
-            mdTheme: null,
+            spTheme: null,
         },
         computed: {
             $mdActiveTheme() {
-                const { enabled, getThemeName, getAncestorTheme } = MdTheme;
+                const { enabled, getThemeName, getAncestorTheme } = SpTheme;
 
-                if (enabled && this.mdTheme !== false) {
-                    return getThemeName(this.mdTheme || getAncestorTheme(this));
+                if (enabled && this.spTheme !== false) {
+                    return getThemeName(this.spTheme || getAncestorTheme(this));
                 }
 
                 return null;

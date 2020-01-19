@@ -44,6 +44,7 @@
         },
         mounted() {
             this.isNull = this.isEmptyOrSpaces(this.value);
+            this.updateHeight();
         },
         methods: {
             updateValue(value) {

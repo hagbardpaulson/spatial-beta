@@ -1,6 +1,6 @@
 import "./base/index.scss";
 import MdReactive from "core/utils/MdReactive";
-import MdTheme from "core/MdTheme";
+import SpTheme from "core/SpTheme";
 
 const init = () => {
     const material = new MdReactive({
@@ -9,21 +9,21 @@ const init = () => {
 
     Object.defineProperties(material.theming, {
         metaColors: {
-            get: () => MdTheme.metaColors,
+            get: () => SpTheme.metaColors,
             set(metaColors) {
-                MdTheme.metaColors = metaColors;
+                SpTheme.metaColors = metaColors;
             },
         },
         theme: {
-            get: () => MdTheme.theme,
+            get: () => SpTheme.theme,
             set(theme) {
-                MdTheme.theme = theme;
+                SpTheme.theme = theme;
             },
         },
         enabled: {
-            get: () => MdTheme.enabled,
+            get: () => SpTheme.enabled,
             set(enabled) {
-                MdTheme.enabled = enabled;
+                SpTheme.enabled = enabled;
             },
         },
     });

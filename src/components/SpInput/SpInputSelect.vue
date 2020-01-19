@@ -95,10 +95,10 @@
             items() {
                 this.matchedItems = this.items;
             },
-            buffer() {
-                console.log("buffer updated");
-                // this.matchedItems = this.filterByValue(this.items, this.buffer);
-            },
+            // buffer() {
+            //     console.log("buffer updated");
+            //     // this.matchedItems = this.filterByValue(this.items, this.buffer);
+            // },
         },
         created() {
             this.$on("selected", this.updateValue);
