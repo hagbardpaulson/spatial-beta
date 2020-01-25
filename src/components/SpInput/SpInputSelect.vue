@@ -182,7 +182,7 @@
                 return newArray;
             },
             selectItem(value) {
-                console.log(value);
+                // console.log(value);
                 const selectedItem = this.items.filter(obj => obj.value === value)[0];
                 this.buffer = selectedItem.header;
                 this.selectedItem = selectedItem;

@@ -1,13 +1,14 @@
 <template>
     <sp-input-field :label="label">
         <textarea
+            ref="textarea"
+            :id="id"
             :placeholder="placeholder"
             class="sp-input-textarea"
             :class="[{'valid':!isNull}, {'input-validation-error':!isValid }]"
             type="text"
             v-model="buffer"
             @input="updateValue($event.target.value)"
-            ref="textarea"
         >
         </textarea>
         <pre ref="ghost" class="sp-input-textarea-ghosting" v-if="autoheight">{{buffer}}</pre>
