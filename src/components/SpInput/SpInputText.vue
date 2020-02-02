@@ -1,5 +1,6 @@
 <template>
-    <sp-input-field :label="label"
+    <sp-input-field :id="id"
+                    :label="label"
                     :validationMessage="validationMessage"
                     @click="$refs.input.$el.focus()"
     >
@@ -8,7 +9,6 @@
         </p>
         <input
             ref="input"
-            :id="id"
             :placeholder="placeholder"
             class="sp-input-text"
             :class="[{'valid':placeholder || prefix || !isNull}, {'input-validation-error':!isValid}]"
