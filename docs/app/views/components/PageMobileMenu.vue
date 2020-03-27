@@ -11,7 +11,10 @@
         <div class="example">
             <sp-button class="sp-button-filled" @click="enabled = !enabled">Toggle</sp-button>
 
-            <sp-mobile-menu :enabled="enabled">raw content</sp-mobile-menu>
+            <sp-mobile-menu :enabled="enabled" @hide="enabled = false">
+                raw content
+                <a class="sp-trigger-hide">hide</a>
+            </sp-mobile-menu>
             <sp-overlay :enabled="enabled" @hide="enabled = false"/>
         </div>
     </div>

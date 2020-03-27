@@ -10,10 +10,12 @@
     export default new SpComponent({
         name: "SpMobileMenu",
         props: ["enabled"],
-        checkIfHide(e) {
-            if (e.target.classList.contains("sp-trigger-hide")) {
-                this.$root.$emit("hide");
-            }
+        methods: {
+            checkIfHide(e) {
+                if (e.target.classList.contains("sp-trigger-hide")) {
+                    this.$emit("hide");
+                }
+            },
         },
     });
 </script>
