@@ -74,17 +74,17 @@
 
 @mixin notch-padding-top($gutter: 20px) {
     padding-top: $gutter;
-    padding-top: unquote("calc(#{$gutter} + env(safe-area-inset-left))");
+    padding-top: unquote("calc(#{$gutter} + env(safe-area-inset-top))");
 }
 
 @mixin notch-padding-right($gutter: 20px) {
     padding-right: $gutter;
-    padding-right: unquote("calc(#{$gutter} + env(safe-area-inset-left))");
+    padding-right: unquote("calc(#{$gutter} + env(safe-area-inset-right))");
 }
 
 @mixin notch-padding-bottom($gutter: 20px) {
     padding-bottom: $gutter;
-    padding-bottom: unquote("calc(#{$gutter} + env(safe-area-inset-left))");
+    padding-bottom: unquote("calc(#{$gutter} + env(safe-area-inset-bottom))");
 }
 
 @mixin notch-padding-left($gutter: 20px) {
