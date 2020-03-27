@@ -1,5 +1,5 @@
 <template>
-    <div class="sp-mobile-menu sp-z-3" v-bind:class="{ enabled: enabled }" v-on:click="test($event)">
+    <div class="sp-mobile-menu sp-z-3" v-bind:class="{ enabled: enabled }" v-on:click="checkIfHide($event)">
         <slot></slot>
     </div>
 </template>
@@ -10,6 +10,11 @@
     export default new SpComponent({
         name: "SpMobileMenu",
         props: ["enabled"],
+        checkIfHide(e) {
+            if (e.target.classList.contains("sp-trigger-hide")) {
+                this.$root.$emit("hide");
+            }
+        },
     });
 </script>
 
