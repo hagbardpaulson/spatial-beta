@@ -1,5 +1,5 @@
 <template>
-    <div class="sp-mobile-menu sp-z-3" v-bind:class="{ enabled: enabled }" v-on:click="checkIfHide($event)">
+    <div class="sp-mobile-menu sp-z-3" v-bind:class="{ enabled: enabled }" v-on:click.capture="checkIfHide($event)">
         <slot></slot>
     </div>
 </template>

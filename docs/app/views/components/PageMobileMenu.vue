@@ -13,7 +13,7 @@
 
             <sp-mobile-menu :enabled="enabled" @hide="enabled = false">
                 raw content
-                <a class="sp-trigger-hide">hide</a>
+                <a href="#asd" class="sp-trigger-hide">hide</a>
             </sp-mobile-menu>
             <sp-overlay :enabled="enabled" @hide="enabled = false"/>
         </div>
