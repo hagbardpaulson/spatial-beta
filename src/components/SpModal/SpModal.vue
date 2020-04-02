@@ -167,7 +167,7 @@
                     grid-row: 1;
                     margin: 0;
                     font-weight: 500;
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                 }
 
                 h5 {
@@ -236,7 +236,7 @@
                         grid-row: 1;
                         margin: 0;
                         font-weight: 500;
-                        font-size: 1.1rem;
+                        font-size: 1rem;
                     }
 
                     h5 {
