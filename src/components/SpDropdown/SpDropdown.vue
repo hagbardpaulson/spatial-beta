@@ -23,11 +23,10 @@
 
     export default new SpComponent({
         name: "SpDropdown",
-        props: ["id", "align", "expand", "offsetX", "offsetY"],
+        props: ["id", "align", "expand", "offsetX", "offsetY", "active"],
         data() {
             return {
                 isMounted: false,
-                active: false,
                 closeHandler: null,
             };
         },
