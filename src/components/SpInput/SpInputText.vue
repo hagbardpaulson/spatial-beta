@@ -65,12 +65,15 @@
                 type: Boolean,
                 default: false,
             },
+            isValid: {
+                type: Boolean,
+                default: true,
+            },
         },
         data() {
             return {
                 buffer: this.value,
                 isNull: false,
-                isValid: true,
                 validationMessage: "",
             };
         },

@@ -28,6 +28,7 @@
             <sp-input-text label="Outline none" class="sp-input-outline-none" v-model="inputValue"/>
             <sp-input-text label="Outline under" class="sp-input-outline-under" v-model="inputValue"/>
             <sp-input-textarea label="Autoheight" v-model="inputValue" :autoheight="true"/>
+            <sp-input-text label="Invalid" :isValid="false" v-model="inputValue"/>
         </div>
         <!-- <component-b/> -->
     </div>
