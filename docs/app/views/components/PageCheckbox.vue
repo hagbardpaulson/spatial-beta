@@ -8,12 +8,12 @@
 
         <h2>example</h2>
         <div class="example">
-            <sp-checkbox v-model="checked" label="label 1" v-sp-ripple/>
-            <sp-radio id="radio1" binding="something"  v-model="something" label="label 2"/>
-            <sp-radio id="radio2" binding="something" data="2" v-model="something" label="label 3" v-sp-ripple/>
+            <sp-checkbox v-model="checked" label="checkbox" v-sp-ripple/>
+            <sp-radio id="radio1" binding="something"  v-model="something" label="radio 1"/>
+            <sp-radio id="radio2" binding="something" data="2" v-model="something" label="radio 2" v-sp-ripple/>
 
             <input type="radio" name="something" value="3" v-model="something"/>
-            {{something}}
+            <!-- x{{something}} -->
         </div>
     </div>
 </template>

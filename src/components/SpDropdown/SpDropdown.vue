@@ -1,5 +1,5 @@
 <template>
-    <div class="sp-dropdown">
+    <div class="sp-dropdown" v-bind:class="{ active: active }">
         <div class="sp-dropdown-trigger" ref="trigger" @click="toggle">
             <slot></slot>
         </div>
