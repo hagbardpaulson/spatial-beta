@@ -155,7 +155,7 @@
 
     .sp-input-field-outline-idle {
         opacity: 0.3;
-        border: 1px rgb(50, 50, 50) solid;
+        border: 2px rgb(50, 50, 50) solid;
     }
 
     /* Show Active on Focus */
