@@ -13,7 +13,11 @@
                 <sp-button class="sp-button">Trigger</sp-button>
                 <template v-slot:content>
                     <div class="content sp-z-2">
-                        co
+                        <div>
+                            {{data}}
+                            <sp-button @click="test()">click me, no close</sp-button>
+                        </div>
+                        
                     </div>
                 </template>
             </sp-dropdown>
@@ -60,8 +64,15 @@
             return {
                 htmlExample: `
                 `,
+                data: "hey"
             };
         },
+        methods: {
+            test() {
+                console.log("test");
+                this.data = "ss";
+            },
+        }
     };
 </script>
 
