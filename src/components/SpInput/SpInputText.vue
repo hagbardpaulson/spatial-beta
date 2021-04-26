@@ -80,6 +80,7 @@
         watch: {
             value() {
                 this.buffer = this.value;
+                this.isNull = this.isEmptyOrSpaces(this.value);
                 this.validateValue(this.value);
             },
         },
