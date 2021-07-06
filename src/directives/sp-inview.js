@@ -3,7 +3,8 @@ import Vue from "vue";
 Vue.directive("sp-inview", {
     isLiteral: true,
     inViewport(el, offset) {
-        let { offsetTop, offsetBottom } = 0;
+        // let offsetTop = 0;
+        let offsetBottom = 0;
         // const offsetRight = 0;
         // const offsetLeft = 0;
         if (offset) {
@@ -11,15 +12,26 @@ Vue.directive("sp-inview", {
             // const hasPct = value.indexOf("%") >= 0;
             if (isPixels) {
                 const offsetInt = parseInt(offset.replace("px", ""), 10);
-                offsetTop = offsetInt;
+                // offsetTop = offsetInt;
                 offsetBottom = offsetInt;
             }
+        } else {
+            console.log(" ");
         }
 
         const rect = el.getBoundingClientRect();
-        return !(rect.bottom < 0 + offsetTop || rect.right < 0
-            || rect.left > window.innerWidth
-            || rect.top > window.innerHeight - offsetBottom);
+        console.log(offsetBottom);
+        console.log(rect.bottom);
+        console.log(window.innerHeight);
+        if (window.innerHeight > (rect.bottom + offsetBottom)) {
+            // bottom
+            return true;
+        }
+        return false;
+
+        // return !(rect.bottom < 0 + offsetTop || rect.right < 0
+        //     || rect.left > window.innerWidth
+        //     || rect.top > window.innerHeight - offsetBottom);
     },
 
     bind(el, binding) {

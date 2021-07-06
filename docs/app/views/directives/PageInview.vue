@@ -9,15 +9,15 @@
 
         <h2>example</h2>
         <div class="example">
-            <div id="box1" v-sp-inview >Box 1 no offset...</div>
+            <div id="box1" >Box 1 no offset...</div>
             <div style="height:800px">
 
             </div>
-            <div id="box2" v-sp-inview="'100px'">Box 2 100px offset</div>
+            <div id="box2" v-sp-inview>Box 2 100px offset</div>
             <div style="height:800px">
 
             </div>
-            <div id="box2" v-sp-inview>Box 2</div>
+            <div id="box2">Box 2</div>
         </div>
     </div>
 </template>
