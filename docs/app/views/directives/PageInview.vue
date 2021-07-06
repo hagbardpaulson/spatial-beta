@@ -9,7 +9,7 @@
 
         <h2>example</h2>
         <div class="example">
-            <div id="box1" v-sp-inview >Box 1 no offset</div>
+            <div id="box1" v-sp-inview >Box 1 no offset.</div>
             <div style="height:800px">
 
             </div>
