@@ -1,10 +1,12 @@
 <template>
     <div class="sp-modal-page" :class="{visible: visible }" :ref="name">
         <div class="sp-modal-page-border-top sp-z-2" v-bind:style="{ opacity: borderTopOpacity }"></div>
-        <div class="sp-modal-page-content" :ref="`sp-modal-page-content-${name}`" :class="{'sp-modal-page-content-scroll': scroll}">
+        <div class="sp-modal-page-content"
+             :ref="`sp-modal-page-content-${name}`" :class="{'sp-modal-page-content-scroll': scroll}"
+        >
             <slot/>
         </div>
-        <div class="sp-modal-page-footer">
+        <div class="sp-modal-page-footer" v-if="footer">
             <slot name="footer">
                 <sp-button class="sp-button prev" @click="stepToPrevious">Previous</sp-button>
                 <sp-button class="sp-button next" @click="stepToNext">Next</sp-button>
@@ -16,7 +18,20 @@
 <script>
     export default {
         name: "SpModalPage",
-        props: ["name", "scroll"],
+        props: {
+            name: {
+                type: String,
+                default: () => "",
+            },
+            scroll: {
+                type: Boolean,
+                default: () => true,
+            },
+            footer: {
+                type: Boolean,
+                default: () => true,
+            },
+        },
         data() {
             return {
                 borderTopOpacity: 0,
