@@ -29,6 +29,14 @@
         name: "SpModal",
         props: {
             id: null,
+            manualPageIndex: {
+                type: Boolean,
+                default: () => false,
+            },
+            pageIndex: {
+                type: Number,
+                default: () => 0,
+            },
             header: {
                 type: String,
                 default: () => "false",
@@ -59,7 +67,10 @@
             enabled(newVal) {
                 if (newVal) {
                     this.$emit("opened");
-                    this.pageIndex = 0;
+                    if (!this.manualPageIndex) {
+                        this.pageIndex = 0;
+                    }
+
                     this.error = false;
                     this.hide = false;
                 } else if (!newVal) {
@@ -75,7 +86,6 @@
             return {
                 hide: true,
                 pages: [],
-                pageIndex: 0,
             };
         },
         mounted() {
@@ -90,18 +100,24 @@
                 this.$emit("hide");
             },
             stepToIndex(index) {
-                this.pageIndex = index;
+                if (!this.manualPageIndex) {
+                    this.pageIndex = index;
+                }
             },
             stepToPrevious() {
                 const nextIndex = this.pageIndex - 1;
                 if (nextIndex >= 0) {
-                    this.pageIndex = nextIndex;
+                    if (!this.manualPageIndex) {
+                        this.pageIndex = nextIndex;
+                    }
                 }
             },
             stepToNext() {
                 const nextIndex = this.pageIndex + 1;
                 if (nextIndex < this.pages.length) {
-                    this.pageIndex = nextIndex;
+                    if (!this.manualPageIndex) {
+                        this.pageIndex = nextIndex;
+                    }
                 }
             },
         },

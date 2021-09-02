@@ -8,17 +8,29 @@
 
         <h2>example</h2>
         <div class="example">
-            <sp-button class="sp-button-filled" @click="modalEnabled = !modalEnabled" v-sp-ripple>Open Modal</sp-button>
+            <sp-button class="sp-button-filled" @click="pageIndex = 0; modalEnabled = !modalEnabled" v-sp-ripple>
+                Open Modal page 0
+            </sp-button>
+            <sp-button class="sp-button-filled" @click="pageIndex = 1; modalEnabled = !modalEnabled" v-sp-ripple>
+                Open Modal page 1
+            </sp-button>
 
             <sp-modal header="Modal name"
+                      :manualPageIndex="true"
+                      :pageIndex="pageIndex"
                       :enabled="modalEnabled"
                       :error="modalError"
                       @hide="modalEnabled = false"
                       width="450px" height="450px"
+                      :footer="false"
             >
                 <sp-modal-page name="page1" visible="true">
                     page 1
                     fix click trough
+                    {{pageIndex}}
+                    <button @click="pageIndex = 1">
+                        next
+                    </button>
                     <sp-checkbox v-model="checked" label="label 1" v-sp-ripple/>
                     <sp-radio id="radio1" binding="something"  v-model="something" label="label 2"/>
                     <sp-radio id="radio2" binding="something" data="2" v-model="something" label="label 3" v-sp-ripple/>
@@ -59,6 +71,7 @@
                 checked: true,
                 something: "3",
                 color: null,
+                pageIndex: 0,
             };
         },
     };
