@@ -72,3 +72,11 @@
 .sp-input-field-outline-idle {
     border-color: sp-theme(light2) !important;
 }
+
+.sp-input-field.disabled label {
+    color: sp-theme(light2) !important;
+}
+
+.sp-input-field.disabled {
+    pointer-events: none;
+}

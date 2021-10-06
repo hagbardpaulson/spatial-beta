@@ -18,6 +18,7 @@
                 :items="items"
                 v-model="selectValue"
             />
+            <sp-input-text label="disabled" disabled v-model="inputValue"/>
             <sp-input-text label="label" v-model="inputValue" @keyupenter="htmlExample = 's'"/>
             <sp-input-text label="required" type="email" :validate="true" :required="true" maxlength="10" v-model="inputValue"/>
             <sp-input-text label="label" placeholder="placeholder" v-model="inputValue"/>

@@ -3,6 +3,9 @@
                     :label="label"
                     :validationMessage="validationMessage"
                     @click="$refs.input.$el.focus()"
+                    :class="[
+                        {'disabled':disabled},
+                    ]"
     >
         <p class="sp-input-prefix" v-if="prefix"  @click="$refs.input.focus()">
             {{prefix}}
@@ -11,10 +14,14 @@
             ref="input"
             :placeholder="placeholder"
             class="sp-input-text"
-            :class="[{'valid':placeholder || prefix || !isNull}, {'input-validation-error':!isValid}]"
+            :class="[
+                {'valid':placeholder || prefix || !isNull},
+                {'input-validation-error':!isValid},
+            ]"
             :type="type"
             :maxlength="maxlength"
             v-model="buffer"
+            :disabled="disabled"
             @input="updateValue($event.target.value)"
             @blur="blur($event.target.value)"
             @keydown="keyDown"
@@ -68,6 +75,10 @@
             isValid: {
                 type: Boolean,
                 default: true,
+            },
+            disabled: {
+                type: Boolean,
+                default: false,
             },
         },
         data() {
