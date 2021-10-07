@@ -8,10 +8,11 @@
 
         <h2>example</h2>
         <div class="example">
-            <sp-button class="sp-button">button</sp-button>
-            <sp-button class="sp-button-text">button text</sp-button>
-            <sp-button class="sp-button-outlined">button outlined</sp-button>
-            <sp-button class="sp-button-filled">button filled</sp-button>
+            <sp-checkbox v-model="isLoading" label="toggle load" v-sp-ripple/>
+            <sp-button class="sp-button" :isLoading="isLoading">button</sp-button>
+            <sp-button class="sp-button-text" :isLoading="isLoading">button text</sp-button>
+            <sp-button class="sp-button-outlined" :isLoading="isLoading">button outlined</sp-button>
+            <sp-button class="sp-button-filled" :isLoading="isLoading">button filled</sp-button>
         </div>
     </div>
 </template>
@@ -26,6 +27,7 @@
                 <sp-button class="sp-button">Button</sp-button> 
                 <sp-button class="sp-button-filled">Button Filled</sp-button>
                 `,
+                isLoading: false,
             };
         },
     };

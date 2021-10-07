@@ -1,6 +1,9 @@
 <template>
     <button class="sp-theme-default" @click="triggerClick">
         <slot/>
+        <div class="sp-button-loading" v-if="isLoading">
+            <sp-loading-dots/>
+        </div>
     </button>
 </template>
 
@@ -9,6 +12,12 @@
 
     export default new SpComponent({
         name: "SpButton",
+        props: {
+            isLoading: {
+                type: Boolean,
+                default: false,
+            },
+        },
         methods: {
             triggerClick(e) {
                 if (this.isLoading) { return; }
@@ -56,6 +65,19 @@
         &::-moz-focus-inner {
             border: 0;
         }
+
+        .sp-button-loading {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            cursor: wait;
+        }
     }
 
     .sp-button {
@@ -73,7 +95,6 @@
 
     .sp-button-outlined {
         @extend .sp-button-base;
-
         border: 2px solid;
     }
 
