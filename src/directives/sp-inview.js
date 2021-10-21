@@ -16,13 +16,13 @@ Vue.directive("sp-inview", {
                 offsetBottom = offsetInt;
             }
         } else {
-            console.log(" ");
+            // console.log(" ");
         }
 
         const rect = el.getBoundingClientRect();
-        console.log(offsetBottom);
-        console.log(rect.bottom);
-        console.log(window.innerHeight);
+        // console.log(offsetBottom);
+        // console.log(rect.bottom);
+        // console.log(window.innerHeight);
         if (window.innerHeight > (rect.bottom + offsetBottom)) {
             // bottom
             return true;
@@ -35,7 +35,7 @@ Vue.directive("sp-inview", {
     },
 
     bind(el, binding) {
-        console.log("binding");
+        // console.log("binding");
         el.classList.add("before-enter");
         el.$onScroll = () => {
             if (binding.def.inViewport(el, binding.value)) {

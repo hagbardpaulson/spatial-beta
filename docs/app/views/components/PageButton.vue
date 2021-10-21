@@ -12,7 +12,10 @@
             <sp-button class="sp-button" :isLoading="isLoading">button</sp-button>
             <sp-button class="sp-button-text" :isLoading="isLoading">button text</sp-button>
             <sp-button class="sp-button-outlined" :isLoading="isLoading">button outlined</sp-button>
-            <sp-button class="sp-button-filled" :isLoading="isLoading">button filled</sp-button>
+            <sp-button class="sp-button-filled" :isLoading="isLoading"
+                       @click="press">
+                button filled
+            </sp-button>
         </div>
     </div>
 </template>
@@ -29,6 +32,11 @@
                 `,
                 isLoading: false,
             };
+        },
+        methods: {
+            press() {
+                console.log("pressed");
+            },
         },
     };
 </script>
